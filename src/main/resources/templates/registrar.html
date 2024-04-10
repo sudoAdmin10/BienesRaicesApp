@@ -2,36 +2,65 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<title>Gym</title>
+	<title>Registrar</title>
 	<link rel="stylesheet" type="text/css" th:href="@{css/bootstrap5.2/bootstrap.min.css}" />
-	
-  	<script th:src="@{js/jquery-1.12.4.min.js}" type="text/javascript"></script>
-  	<script th:src="@{js/bootstrap.min.js}" type="text/javascript"></script>
-</head>	
+	<script src="https://kit.fontawesome.com/c933420b11.js" crossorigin="anonymous"></script>
+	<link rel="icon" type="image/x-icon" href="/img/xing.svg">
+
+	<link rel="stylesheet" th:href="@{css/registrar.css}" />
+
+	<script th:src="@{js/jquery-1.12.4.min.js}" type="text/javascript"></script>
+	<script th:src="@{js/bootstrap.min.js}" type="text/javascript"></script>
+</head>
+
 <body>
-	<div class="container">
-		<form th:action="@{/registrar}" th:object="${usuario}" method="post">
-			<h2> Registrar usuario</h2>
-			<span th:text="${show}"></span>
-			<div class="row">
-				<div class="col">
-					<label class="form-label">Nombre: </label>
-					<input type="text" th:field="*{nombre}" placeholder="Nombre completo" class="form-control" required/>
-				</div>
-				<div class="col">
-					<label class="form-label">Email: </label>
-					<input type="text" th:field="*{email}" placeholder="Email" class="form-control" required/>
-				</div>
-				<div class="col">
-					<label>Password: </label>
-					<input type="password" th:field="*{password}" placeholder="Password" class="form-control" required/>
-				</div>
-			</div><br>
-			<div class="form-group">
-				<button type="submit" class="btn btn-primary btn-block">Guardar</button>
+
+	<div class="model ">
+		<div class="model-container">
+			<div class="model-left">
+				<form name="form" class="form" th:action="@{/registrar}" th:object="${usuario}" method="post">
+					<div>
+						<h2 class="title">Registrar usuario</h2>
+						<p class="desc">Se parte de nosotros, únete a nuestro equipo.</p>
+						<span th:text="${show}"></span>
+					</div>
+					<div class="input-block">
+						<div class="input-label">
+							<label for="name" class="input-label">Nombre: </label>
+							<input type="text" th:field="*{nombre}" placeholder="Nombre completo" class="form-control"
+								required />
+						</div>
+					</div>
+					<div class="input-block">
+						<div class="input-label">
+							<label for="email" class="input-label" placeholder="Correo">Correo</label>
+							<input type="text" th:field="*{email}" placeholder="Email" class="form-control" required />
+						</div>
+					</div>
+					<div class="input-block">
+						<div class="">
+							<label for="password" class="input-label" placeholder="Password">Contraseña</label>
+							<input type="password" th:field="*{password}" placeholder="Password" class="form-control"
+								required />
+						</div>
+					</div>
+
+					<div class="fp form-group">
+						<button class="input-button" type="submit">Registrar</button>
+					</div>
+				</form>
 			</div>
-		</form>
+
+			<div class="model-right">
+				<img src="../img/fondoInicio.jpg" alt="" class="right-img">
+
+			</div>
+
+		</div>
 	</div>
 
+
+
 </body>
+
 </html>

@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+.content-table {
+    font-family: "Raleway", sans-serif;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 1rem;
+    min-width: 400px;
+}
+
+.content-table thead tr {
+    background-color: #55311c;
+    color: aliceblue;
+    text-align: left;
+    font-weight: bold;
+}
+
+.content-tableth,
+.content-tabletd {
+    padding: 12px 15px;
+}
+
+.content-table tbody tr {
+    border-bottom: 2px solid #55311c;
+    font-weight: 500;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+    background-color: #d8ccc5;
+    color: #55311c;
+    font-weight: 500;
+}
+
+.content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #55311c;
+}
+
+.content-table a {
+    color: #55311c;
+}
+
+.title {
+    font-size: 26px;
+    text-align: center;
+    margin-top: 2rem;
+    font-weight: 400;
+    color: #55311c;
+
+}
+
+.input-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.7px;
+    color: #8c7569;
+    transition: 0.3s;
+}

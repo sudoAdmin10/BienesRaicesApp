@@ -1,0 +1,142 @@
+body {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+}
+
+
+/*=============Footer===============*/
+
+.footter {
+    color: #8c7569;
+}
+
+.footter-container {
+    display: flex;
+    position: absolute;
+    font-family: "Montserrat", sans-serif;
+}
+
+.colum-info {
+    background-color: #faf4f0;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+
+    spam {
+        color: #683c23;
+    }
+
+}
+
+.colum-img {
+    background-color: #faf4f0;
+    padding: 2rem;
+    display: flex;
+    flex: 1;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.colum-icons {
+    background-color: #faf4f0;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+
+}
+
+.footter-icons {
+    display: flex;
+    flex-direction: row;
+    font-size: 24px;
+
+    i {
+        padding-top: 3rem;
+        padding-bottom: 2rem;
+    }
+
+}
+
+/*=============Navbar===============*/
+
+.header-navbar {
+    box-sizing: border-box;
+    background-color: #faf4f0;
+    height: 70px;
+
+}
+
+li,
+a,
+button {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: aliceblue;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.logo-navbar {
+    cursor: pointer;
+    height: 40px;
+
+}
+
+
+.nav-links li {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.nav-links a:hover {
+    color: #683c23;
+}
+
+button {
+    padding: 9px 25px;
+    background-color: #8c7569;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #683c23;
+}
+
+
+.button-37 {
+    background-color: #8c7569;
+    border: 1px solid #8c7569;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    outline: none;
+    outline: 0;
+    text-align: center;
+    transform: translateY(0);
+    transition: transform 150ms, box-shadow 150ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-37:hover {
+    box-shadow: #683c23 0 3px 9px 0;
+    transform: translateY(-2px);
+}

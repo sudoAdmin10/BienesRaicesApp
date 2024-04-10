@@ -11,17 +11,17 @@ import com.um.model.Role;
 
 @Component
 public class RoleDao {
-	
+
 	@Autowired
-	private JdbcTemplate postgresTemplate;
-	
+	private JdbcTemplate MySQLTemplate;
+
 	public List<Role> listRoles() {
 		List<Role> lista = new ArrayList<Role>();
 		String query = "SELECT * FROM EXA.ROLE ORDER BY ID";
-		
-		lista = postgresTemplate.queryForList(query, Role.class);
+
+		lista = MySQLTemplate.queryForList(query, Role.class);
 
 		return lista;
 	}
-	
+
 }

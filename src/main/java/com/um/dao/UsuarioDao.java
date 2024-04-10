@@ -13,101 +13,125 @@ import com.um.model.Usuario;
 
 @Component
 public class UsuarioDao {
-	
+
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
-	
+
 	@Autowired
-	private JdbcTemplate postgresTemplate;
+	private JdbcTemplate MySQLTemplate;
 
 	public Usuario buscaUsuarioPorEmail(String email) {
 		Usuario objeto = new Usuario();
 		String query = "SELECT ID, NOMBRE, EMAIL, PASSWORD, ROLES, ACTIVO FROM USUARIO WHERE EMAIL = ?";
-		
+
 		try {
-			objeto = postgresTemplate.queryForObject(query, new UsuarioMapper(), email);
+			objeto = MySQLTemplate.queryForObject(query, new UsuarioMapper(), email);
 		} catch (Exception e) {
-			System.out.println("ERROR : UsuarioDao | buscaUsuarioPorEmail | "+e);
+			System.out.println("ERROR : UsuarioDao | buscaUsuarioPorEmail | " + e);
 		}
-		
+
 		return objeto;
 	}
 
 	public List<Usuario> listaUsuarios() {
 		List<Usuario> lista = new ArrayList<Usuario>();
 		String query = "SELECT * FROM USUARIO ORDER BY NOMBRE";
-		
+
 		try {
-			lista = postgresTemplate.queryForList(query, Usuario.class);
+			lista = MySQLTemplate.query(query, new UsuarioMapper());
 		} catch (Exception e) {
-			System.out.println("ERROR : UsuarioDao | listaUsuarios | "+e);
+			System.out.println("ERROR : UsuarioDao | listaUsuarios | " + e);
 		}
 		return lista;
 	}
 
-	public void grabaUsuario(Usuario objeto, int[] roles) {
+	public boolean grabaUsuario(Usuario objeto, int[] roles) {
+		boolean ok = false;
+
 		objeto.setPassword(bCryptPasswordEncoder.encode(objeto.getPassword()));
-		
+
 		String query = "SELECT NOMBRE FROM ROLE WHERE ID = ?";
-		
+
 		String grabaRoles = "-";
-		
-		if(roles != null) {
-			for(int roleId : roles) {
-				String role = postgresTemplate.queryForObject(query, String.class, roleId);
-				grabaRoles += String.valueOf(role)+"-";
+
+		if (roles != null) {
+			for (int roleId : roles) {
+				String role = MySQLTemplate.queryForObject(query, String.class, roleId);
+				grabaRoles += String.valueOf(role) + "-";
 			}
 		}
-		
-		Object[] parametros = new Object[]{
-			objeto.getNombre(),objeto.getEmail(),objeto.getPassword(),grabaRoles
+		Object[] parametros = new Object[] {
+				objeto.getNombre(), objeto.getEmail(), objeto.getPassword(), grabaRoles
 		};
-		
-		query = "INSERT INTO USUARIO(NOMBRE,EMAIL,PASSWORD,ROLES,ACTIVO) VALUES(?, ?, ?, ?, TRUE)";
 
-		if(postgresTemplate.update(query, parametros) >= 1) {
+		query = "INSERT INTO USUARIO(NOMBRE,EMAIL,PASSWORD,ROLES,ACTIVO, AGENCIA_ID, STATUS ) VALUES(?, ?, ?, ?, TRUE, 0, '-' )";
+
+		if (MySQLTemplate.update(query, parametros) >= 1) {
 			query = "SELECT ID FROM USUARIO WHERE NOMBRE = ? AND EMAIL = ?";
-			
-			parametros = new Object[]{
-				objeto.getNombre(),objeto.getEmail()
+
+			parametros = new Object[] {
+					objeto.getNombre(), objeto.getEmail()
 			};
-	
-			int usuarioId = postgresTemplate.queryForObject(query, Integer.class, parametros);
-	
-			if(roles != null) {
-				for(int roleId : roles) {
-					query = "INSERT INTO USUARIO_ROLE(USUARIO_ID, ROLE_ID) VALUES( ?, ?)";
-					postgresTemplate.update(query, new Object[]{usuarioId,roleId});
+
+			int usuarioId = MySQLTemplate.queryForObject(query, Integer.class, parametros);
+
+			if (roles != null) {
+				for (int roleId : roles) {
+					query = "INSERT INTO USUARIO_ROLE(ID_USUARIO, ID_ROLE) VALUES( ?, ?)";
+					MySQLTemplate.update(query, new Object[] { usuarioId, roleId });
 				}
 			}
+			ok = true;
 		}
+
+		return ok;
 	}
 
-	public Usuario buscaUsuarioPorId(String id) {
+	public boolean editarUsuario(Usuario objeto, int[] roles) {
+		boolean ok = false;
+		System.out.println("password " + objeto.getPassword());
+
+		objeto.setPassword(bCryptPasswordEncoder.encode(objeto.getPassword()));
+
+		System.out.println("Entrado en Editar Dao ");
+
+		String query = "UPDATE USUARIO SET NOMBRE = ?, EMAIL = ?,PASSWORD = ?, AGENCIA_ID = ?,  WHERE ID = ?";
+		// int rowsUpdated = MySQLTemplate.update(query, objeto.getNombre(),
+		// objeto.getEmail(), objeto.getPassword(),
+		// objeto.getAgencia_id(),
+		// objeto.getId());
+		// if (rowsUpdated >= 1) {
+		// ok = true;
+		// }
+		ok = true;
+		return ok;
+	}
+
+	public Usuario buscaUsuarioPorId(int id) {
 		Usuario objeto = new Usuario();
 		String query = "SELECT * FROM USUARIO WHERE ID = ?";
-		
+
 		try {
-			objeto = postgresTemplate.queryForObject(query, Usuario.class, id);
+			objeto = MySQLTemplate.queryForObject(query, new UsuarioMapper(), id);
 		} catch (Exception e) {
-			System.out.println("ERROR : UsuarioDao | buscaUsuarioPorId | "+e);
+			System.out.println("ERROR : UsuarioDao | buscaUsuarioPorId | " + e);
 		}
-	
+
 		return objeto;
 	}
 
 	public boolean existeEmail(String email) {
 		boolean ok = false;
 		String query = "SELECT COUNT(*) FROM USUARIO WHERE EMAIL = ?";
-		
+
 		try {
-			if(postgresTemplate.queryForObject(query, Integer.class, email) >= 1) {
+			if (MySQLTemplate.queryForObject(query, Integer.class, email) >= 1) {
 				ok = true;
 			}
 		} catch (Exception e) {
-			System.out.println("ERROR : UsuarioDao | existeEmail | "+e);
+			System.out.println("ERROR : UsuarioDao | existeEmail | " + e);
 		}
-		
+
 		return ok;
 	}
 
@@ -116,28 +140,43 @@ public class UsuarioDao {
 		String query = "UPDATE USUARIO SET ACTIVO = FALSE WHERE ID = ?";
 
 		try {
-			if(postgresTemplate.update(query, usuarioId) >= 1){
+			if (MySQLTemplate.update(query, usuarioId) >= 1) {
 				ok = true;
 			}
 		} catch (Exception e) {
-			System.out.println("ERROR : UsuarioDao | bajaUsuario | "+e);
+			System.out.println("ERROR : UsuarioDao | bajaUsuario | " + e);
 		}
-		
+
 		return ok;
 	}
 
 	public boolean activarUsuario(int usuarioId) {
 		boolean ok = false;
 		String query = "UPDATE USUARIO SET ACTIVO = TRUE WHERE ID = ?";
-		
+
 		try {
-			if(postgresTemplate.update(query, usuarioId) >= 1){
+			if (MySQLTemplate.update(query, usuarioId) >= 1) {
 				ok = true;
 			}
 		} catch (Exception e) {
-			System.out.println("ERROR : UsuarioDao | activarUsuario | "+e);
+			System.out.println("ERROR : UsuarioDao | activarUsuario | " + e);
 		}
-		
+
+		return ok;
+	}
+
+	public boolean borrarUsuarioPorId(int id) {
+		boolean ok = false;
+		String query = "DELETE FROM USUARIO WHERE ID = ?";
+
+		try {
+			if (MySQLTemplate.update(query, id) >= 1) {
+				ok = true;
+			}
+		} catch (Exception e) {
+			System.out.println("ERROR : UsuarioDao | borrarUsuario | " + e);
+		}
+
 		return ok;
 	}
 

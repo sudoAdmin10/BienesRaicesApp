@@ -1,0 +1,43 @@
+body {
+    font-family: "Nunito", sans-serif;
+    background-color: fuchsia;
+    background-image: url('https://th.bing.com/th/id/R.4c94edc84ee5ac74b20499eeabd3b92e?rik=XrmVEei9IeBjAg&riu=http%3a%2f%2ffullhdwall.com%2fwp-content%2fuploads%2f2017%2f06%2fCute-Lionel-Messi-1440x1080.jpg&ehk=UJBTB4Xc2X77j0qMcZwzP0CBDas5y8xZwWUsJbcVIag%3d&risl=&pid=ImgRaw&r=0');
+}
+
+.container {
+    padding: 20px;
+}
+
+.card {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    object-fit: cover;
+}
+
+.card-title {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.icon-text-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+i.fa-solid,
+i.fa-brands {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.card-text {
+    margin: 0;
+}

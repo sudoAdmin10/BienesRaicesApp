@@ -1,0 +1,115 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  color: #8c7569;
+}
+
+
+.titulo {
+  padding: 30px;
+}
+
+.fondo {
+  background-image: url('../img/fondoInicio.jpg');
+  height: 700px;
+  opacity: 0.7;
+  background-position: 0% 30%;
+  background-attachment: fixed;
+
+}
+
+.title {
+  color: #ffffff;
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.subtitle {
+  color: #ffffff;
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.button {
+  background-color: #8c7569;
+  ;
+  border-radius: 12px;
+  color: white;
+  padding: 10px 20px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #55311c;
+  color: white;
+}
+
+.section-config {
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+.card-info-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.icon-text-container {
+  margin-top: 10px;
+  display: flex;
+  align-items: bottom;
+}
+
+.icon-text-container i {
+  margin-left: 15px;
+}
+
+.fondo-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  margin-bottom: 20px;
+  background-color: #f6f3f0;
+
+}
+
+.icon-banner {
+  font-size: 3rem;
+  color: #55311c;
+  justify-content: center;
+  align-items: center;
+}
+
+.col-banner {
+  text-align: center;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon-banner {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+h4,
+p {
+  margin: 0;
+  color: #55311c;
+
+}

@@ -1,0 +1,47 @@
+.form-propiedades {
+    width: 600px;
+    color: #683c23;
+    border: 1px solid #683c23;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form-propiedades-title {
+    text-align: center;
+    margin: 10px;
+    background-color: #8c7569;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    z-index: 1;
+    padding: 10px;
+}
+
+.boton-guardar {
+    margin-left: 155px;
+}
+
+.boton-group {
+    background-color: #8c7569;
+    color: aliceblue;
+}
+
+.boton-group:hover {
+    background-color: #683c23;
+    color: aliceblue;
+}
+
+.card-info-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.icon-text-container {
+    margin-top: 10px;
+    display: flex;
+    align-items: bottom;
+}
+
+.icon-text-container i {
+    margin-left: 15px;
+}

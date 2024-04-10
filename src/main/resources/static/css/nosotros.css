@@ -1,0 +1,83 @@
+section {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    color: #8c7569;
+    text-align: center;
+}
+
+h1,
+h2,
+h3 {
+    color: #683c23;
+}
+
+.card-nosotros {
+    cursor: pointer;
+
+    outline: none;
+    outline: 0;
+    transform: translateY(0);
+    transition: transform 150ms, box-shadow 150ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.card-nosotros:hover {
+    box-shadow: #683c23 0 3px 9px 0;
+    transform: translateY(-10px);
+}
+
+
+.fondo-banner {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 300px;
+    margin-bottom: 20px;
+    background-color: #f6f3f0;
+
+}
+
+.icon-banner {
+    font-size: 3rem;
+    color: #55311c;
+    justify-content: left;
+    align-items: center;
+}
+
+.col-banner {
+    text-align: left;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-banner {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.img-banner-nosotros {
+    background-image: url('https://www.pixelstalk.net/wp-content/uploads/2016/10/Building-Wallpapers-HD.jpg');
+    height: 450px;
+    background-position: 0% 60%;
+    opacity: 0.9;
+
+}
+
+.titulo-banner {
+    position: relative;
+    color: aliceblue;
+
+    h4 {
+        color: aliceblue;
+        font-size: 3rem;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    }
+
+}
