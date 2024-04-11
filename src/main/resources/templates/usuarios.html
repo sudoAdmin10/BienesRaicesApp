@@ -77,24 +77,33 @@
 					<h1 class="title" id="exampleModalLabel">Editar Usuario</h1>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
-				<form th:action="@{/editarUsuario}" method="post">
-					<input name="id" type="hidden" th:value="${tmp.id}">
+				<form th:action="@{/editarUsuario}" method="post" th:object="${tmp}">
+					<input name="id" type="hidden" th:field="*{id}">
 					<div class="modal-body">
 						<div class="mb-3">
 							<label for="recipient-name" class="col-form-label input-label">Nombre:</label>
-							<input name="nombre" type="text" class="form-control" th:value="*{tmp.nombre}">
+							<input name="nombre" type="text" class="form-control" th:field="*{nombre}">
 						</div>
 						<div class="mb-3">
 							<label for="recipient-name" class="col-form-label input-label">Email:</label>
-							<input name="email" type="text" class="form-control" th:value="*{tmp.email}">
+							<input name="email" type="text" class="form-control" th:field="*{email}">
 						</div>
 						<div class="mb-3">
 							<label for="recipient-name" class="col-form-label input-label">Agencia:</label>
-							<input type="text" id="agencia_id" class="form-control" th:value="*{tmp.agencia_id}">
+							<!-- <input type="text" id="agencia_id" class="form-control" th:field="*{agencia_id}"> -->
+							<select name="agencia_id" id="agencia_id" th:field="*{agencia_id}"
+								class="btn  dropdown-toggle form-control">
+								<option value="1">Agencia 1</option>
+								<option value="2">Agencia 2</option>
+								<option value="3">Agencia 3</option>
+								<option value="4">Agencia 4</option>
+								<option value="5">Agencia 5</option>
+								<option value="6">Agencia 6</option>
+							</select>
 						</div>
 						<div class="mb-3">
 							<label for="recipient-name" class="col-form-label input-label">Password:</label>
-							<input type="password" id="password" class="form-control" th:value="*{tmp.password}">
+							<input type="password" id="password" class="form-control" th:field="*{password}">
 						</div>
 					</div>
 					<div class="modal-footer">
@@ -148,14 +157,19 @@
 		})
 
 	</script>
-	<!-- 	<span > -->
+
 	<script th:if="${showModal}" type="text/javascript" th:inline="javascript">
 		var myModal = new bootstrap.Modal(document.getElementById("exampleModal"), {});
 		document.onreadystatechange = function () {
 			myModal.show();
 		};
+
+		function setTipo(agencia_id) {
+			document.getElementById('agencia_id').value = agencia_id;
+		}
 	</script>
-	<!-- 	</span> -->
+
+
 </body>
 
 </html>

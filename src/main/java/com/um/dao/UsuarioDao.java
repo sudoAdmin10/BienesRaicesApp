@@ -95,14 +95,14 @@ public class UsuarioDao {
 
 		System.out.println("Entrado en Editar Dao ");
 
-		String query = "UPDATE USUARIO SET NOMBRE = ?, EMAIL = ?,PASSWORD = ?, AGENCIA_ID = ?,  WHERE ID = ?";
-		// int rowsUpdated = MySQLTemplate.update(query, objeto.getNombre(),
-		// objeto.getEmail(), objeto.getPassword(),
-		// objeto.getAgencia_id(),
-		// objeto.getId());
-		// if (rowsUpdated >= 1) {
-		// ok = true;
-		// }
+		String query = "UPDATE USUARIO SET NOMBRE = ?, EMAIL = ?,PASSWORD = ?, AGENCIA_ID = ?  WHERE ID = ?";
+		int rowsUpdated = MySQLTemplate.update(query, objeto.getNombre(),
+				objeto.getEmail(), objeto.getPassword(),
+				objeto.getAgencia_id(),
+				objeto.getId());
+		if (rowsUpdated >= 1) {
+			ok = true;
+		}
 		ok = true;
 		return ok;
 	}
