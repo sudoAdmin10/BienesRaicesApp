@@ -29,50 +29,170 @@
 
 <body>
 
-    <section class="container bg-light">
-        <div class="">
-            <div class="" th:each="p : ${detalles}">
-                <div class="card h-100">
-                    <img th:src="@{'/images/'} + ${p.imagen}" class="card-img-top" alt="Imagen Propiedad" width="400"
-                        height="300">
-                    <div class="card-body">
-                        <h5 class="card-title" th:text=" 'Precio: $' + ${p.precio}"></h5>
-                    </div>
-                    <div class="card-info-container">
-                        <div class="icon-text-container">
-                            <i class="fa-solid fa-toilet"></i>
-                            <p class="card-text" th:text="${p.num_wc}"></p>
-                        </div>
-                        <div class="icon-text-container">
-                            <i class="fa-solid fa-bed"></i>
-                            <p class="card-text" th:text="${p.num_habitaciones}"></p>
-                        </div>
-                        <div class="icon-text-container">
-                            <i class="fa-brands fa-codepen"></i>
-                            <p class="card-text" th:text="${p.dimensiones} + ' m²'"></p>
-                        </div>
-                        <div class="icon-text-container">
-                            <i class="fa-brands fa-codepen"></i>
-                            <p class="card-text" th:text="${p.tipo}"></p>
-                        </div>
-                        <div class="icon-text-container">
-                            <i class="fa-brands fa-codepen"></i>
-                            <p class="card-text" th:text="${p.direccion}"></p>
-                        </div>
-
-                    </div>
-                </div>
+    <section class="container bg-light" style="margin-top: 30px;">
+        <div class="col-md-6 card" th:each="p : ${detalles}">
+            <div class="col-md-3 card-img">
+                <img th:src="@{'/images/'} + ${p.imagen}" class="card-img-top" alt="Imagen Propiedad">
             </div>
+            <div class=" ">
+                <div class="title-detalle">
+                    <h5 th:text="${p.tipo} + ' en ' + ${p.estado_Propiedad} "></h5>
+                    <p th:text="${p.direccion}"></p>
+                </div>
+
+
+                <div class="title-detalle ">
+                    <h5>Precio: </h5>
+                </div>
+                <p class="card-text" th:text="${p.precio}"></p>
+
+                <div class="title-detalle">
+                    <h5>Descripcion: </h5>
+                </div>
+                <p class="card-text" th:text="${p.descripcion}"></p>
+
+                <div class="">
+                    <a th:href="@{/propiedades/detalles?id={id}(id=${p.id})}" class="btn " data-toggle="tooltip"
+                        data-placement="top" title="Editar"><i class="fa-solid fa-pen-to-square"
+                            style="color: black;"></i></a>
+                    <a th:href="@{/borrarPropiedad?id={id}(id=${p.id})}" class="btn " data-toggle="tooltip"
+                        data-placement="top" title="Borrar"><i class="fa-solid fa-trash" style="color: black;"></i></a>
+                </div>
+
+                <!-- <form th:action="@{/borrarPropiedadConfirmacion}" th:object="${propiedad}" method="POST">
+                        <input type="hidden" name="id" th:value="${detalles.id}" />
+                        <button type="submit">Borrar propiedad</button> -->
+
+            </div>
+
+        </div>
         </div>
     </section>
 
+    <!-- <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="title" id="exampleModalLabel">Editar Propiedad</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
 
-    <form th:action="@{/borrarPropiedadConfirmacion}" th:object="${propiedad}" method="POST">
-        <input type="hidden" name="id" th:value="${detalles.id}" />
-        <button type="submit">Borrar propiedad</button>
+                <form th:action="@{/editarPropiedad}" th:object="${tmp}" method="post" class="">
+                    <input name="id" type="hidden" th:field="*{id}">
+                    <div class="input-block">
+                        <div class="input-label">
+                            <label for="precio">Precio:</label>
+                            <input class="form-control" type="text" id="precio" name="precio" th:field="*{precio}"><br>
+                        </div>
+                    </div>
+                    <div class="input-block">
+                        <label for="estado_Propiedad">Estado:</label>
+                        <select name="estado_Propiedad" id="estado_Propiedad" th:field="*{estado_Propiedad}"
+                            class="btn  dropdown-toggle form-control">
+                            <option value="1">Venta</option>
+                            <option value="2">Renta</option>
+                        </select>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <label for="recipient-name" class="col-form-label input-label">Propietario:</label>
+                            <select name="propietario" id="propietario" class="btn  dropdown-toggle form-control">
+                                <option value="1">Alan </option>
+                                <option value="2">Daniel </option>
+                                <option value="3">Emmanuel </option>
+                            </select>
+                        </div>
+                    </div>
 
-    </form>
+                    <div class="input-block">
+                        <label for="tipo">Tipo:</label>
+                        <select name="tipo" id="tipo" th:field="*{tipo}" class="btn  dropdown-toggle">
+                            <option value="1">Casa</option>
+                            <option value="2">Departamento</option>
+                            <option value="3">Terreno</option>
+                            <option value="4">Edificio</option>
+                            <option value="5">Oficina</option>
+                            <option value="6">Local</option>
+                        </select>
+                        <br>
+                    </div>
 
+                    <div class="col">
+                        <div class="input-block">
+                            <div class="input-label">
+                                <label for="direccion">Dirección:</label>
+                                <input class="form-control" type="text" th:field="*{direccion}"
+                                    placeholder="Direccion de la propiedad" name="direccion">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+
+                        <div class="input-block">
+                            <div class="input-label">
+                                <label for="dimensiones">Dimensiones (m²):</label>
+                                <input class="form-control" type="text" th:field="*{dimensiones}"
+                                    placeholder="Dimension en metros cuadrados" name="dimensiones">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-block">
+                        <div class="input-label">
+                            <label for="num_wc">Número de Baños:</label>
+                            <input class="form-control" type="text" name="num_wc" th:field="*{num_wc}">
+                        </div>
+                    </div>
+                    <div class="input-block">
+                        <div class="input-label">
+                            <label for="num_habitaciones">Número de Habitaciones:</label>
+                            <input class="form-control" type="text" name="num_habitaciones"
+                                th:field="*{num_habitaciones}">
+                        </div>
+                    </div>
+                    <div class="input-block">
+                        <div class="input-label">
+                            <label for="descripcion">Descripcion adicional de la propiedad</label>
+                            <textarea th:field="*{descripcion}" name="descripcion" rows="4" cols="50"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="boton-guardar">
+                        <button th:action="@{/editarPropiedad}" class="input-button button-37 "
+                            type="submit">Editar</button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div> -->
+
+
+    <script type="text/javascript" th:inline="javascript">
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+
+    </script>
+
+    <script th:if="${showModal}" type="text/javascript" th:inline="javascript">
+        var myModal = new bootstrap.Modal(document.getElementById("exampleModal2"), {});
+        document.onreadystatechange = function () {
+            myModal.show();
+        };
+
+        function setTipo(propietario) {
+            document.getElementById('propietario').value = propietario;
+        }
+        function setTipo(estado_Propiedad) {
+            document.getElementById('estado_Propiedad').value = estado_Propiedad;
+        }
+
+        function setTipo(tipo) {
+            document.getElementById('tipo').value = tipo;
+        }
+    </script>
 
 </body>
 

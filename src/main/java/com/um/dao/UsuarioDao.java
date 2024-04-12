@@ -20,14 +20,15 @@ public class UsuarioDao {
 	@Autowired
 	private JdbcTemplate MySQLTemplate;
 
-	public Usuario buscaUsuarioPorEmail(String email) {
+	public Usuario buscaAgenciaUsuario() {
 		Usuario objeto = new Usuario();
-		String query = "SELECT ID, NOMBRE, EMAIL, PASSWORD, ROLES, ACTIVO FROM USUARIO WHERE EMAIL = ?";
+		System.out.println("AGENCIA DAO	");
+		String query = "SELECT NOMBRE FROM AGENCIAS";
 
 		try {
-			objeto = MySQLTemplate.queryForObject(query, new UsuarioMapper(), email);
+			objeto = MySQLTemplate.queryForObject(query, new UsuarioMapper());
 		} catch (Exception e) {
-			System.out.println("ERROR : UsuarioDao | buscaUsuarioPorEmail | " + e);
+			System.out.println("ERROR : UsuarioDao | buscaAgenciaUsuarioPorIdAgencia | " + e);
 		}
 
 		return objeto;
@@ -57,7 +58,7 @@ public class UsuarioDao {
 		if (roles != null) {
 			for (int roleId : roles) {
 				String role = MySQLTemplate.queryForObject(query, String.class, roleId);
-				grabaRoles += String.valueOf(role) + "-";
+				grabaRoles += String.valueOf(role) + "admin";
 			}
 		}
 		Object[] parametros = new Object[] {

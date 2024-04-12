@@ -38,6 +38,7 @@ public class UsuariosController {
 
 		int id = request.getParameter("id") == null ? 0 : Integer.parseInt(request.getParameter("id"));
 		String mensaje = request.getParameter("Mensaje") == null ? "1" : request.getParameter("Mensaje");
+		System.out.println("idUsuario " + id);
 
 		Usuario tmp = new Usuario();
 
@@ -45,7 +46,12 @@ public class UsuariosController {
 		if (request.getParameter("id") != null) {
 			showModal = true;
 			tmp = usuarioDao.buscaUsuarioPorId(id);
+			System.out.println("0====0 " + tmp.getId());
 		}
+
+		Usuario agencias = new Usuario();
+
+		agencias = usuarioDao.buscaAgenciaUsuario();
 
 		boolean result = request.getParameter("borrar") == null ? false
 				: Boolean.parseBoolean(request.getParameter("borrar"));
@@ -53,6 +59,7 @@ public class UsuariosController {
 		modelAndView.addObject("Borrar este usuario", result);
 		modelAndView.addObject("role", role);
 		modelAndView.addObject("lista", usuarioDao.listaUsuarios());
+		modelAndView.addObject("agencias", agencias);
 		modelAndView.addObject("mensaje", mensaje);
 		modelAndView.addObject("showModal", showModal);
 		modelAndView.addObject("tmp", tmp);
@@ -63,6 +70,7 @@ public class UsuariosController {
 	@RequestMapping(value = "/editarUsuario", method = RequestMethod.POST)
 	public ModelAndView editarUsuario(@ModelAttribute("usuario") Usuario usuario, HttpServletRequest request) {
 		ModelAndView modelAndView = new ModelAndView();
+
 		int agencia_id = request.getParameter("id") == null ? 0 : Integer.parseInt(request.getParameter("id"));
 
 		System.out.println("Entrando al Método POST de Editar Usuario");

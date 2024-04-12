@@ -88,9 +88,17 @@ public class PropiedadesController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/propiedades/edit", method = RequestMethod.POST)
+    @RequestMapping(value = "/editarPropiedad", method = RequestMethod.POST)
     public ModelAndView editarPropiedad(Propiedad propieddad) {
         ModelAndView modelAndView = new ModelAndView();
+        System.out.println("Entrando al Método POST de Editar Propiedad");
+        System.out.println(
+                "Propiedad " + propieddad.getId() + " " + propieddad.getPrecio() + " " + propieddad.getDimensiones()
+                        + " " + propieddad.getPropietario() + " ");
+
+        boolean result = propiedadDao.editarPropiedad(propieddad);
+
+        modelAndView = new ModelAndView("redirect:/propiedades/detalles?editar=" + result);
         return modelAndView;
     }
 
@@ -101,11 +109,22 @@ public class PropiedadesController {
         Propiedad propiedad_detalles = new Propiedad();
 
         int id = request.getParameter("id") == null ? 0 : Integer.parseInt(request.getParameter("id"));
-
+        System.out.println("ID DEL GET porpiedades/detalles" + id);
         if (request.getParameter("id") != null) {
             propiedad_detalles = propiedadDao.buscaPropiedadPorId(id);
         }
 
+        Propiedad tmp = new Propiedad();
+
+        boolean showModal = false;
+        if (request.getParameter("id") != null) {
+            showModal = true;
+            tmp = propiedadDao.buscaPropiedadPorId(id);
+            System.out.println("Propiedad id 0====0 " + tmp.getId());
+        }
+
+        modelAndView.addObject("showModal", showModal);
+        modelAndView.addObject("tmp", tmp);
         modelAndView.addObject("detalles", propiedad_detalles);
         modelAndView.setViewName("detalles-propiedad");
 

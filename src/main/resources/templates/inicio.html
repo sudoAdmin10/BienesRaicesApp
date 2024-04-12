@@ -88,7 +88,8 @@
                             <i class="fa-brands fa-codepen"></i>
                             <p class="card-text" th:text="${p.dimensiones} + ' m²'"></p>
                         </div>
-                        <a href="#" class="button button1" style="margin-bottom: 15px;">Ver más</a>
+                        <a th:href="@{/propiedades/detalles?id={id}(id=${p.id})}" class="button button1"
+                            style="margin-bottom: 15px;">Ver más</a>
                     </div>
                 </div>
             </div>

@@ -100,16 +100,13 @@ public class PropiedadDao {
 
     public boolean editarPropiedad(Propiedad objeto) {
         boolean ok = false;
-        String query = "SELECT ID FROM PROPIEDAD WHERE TIPO = ? AND PRECIO = ?";
 
-        int propiedadId = MySQLTemplate.queryForObject(query, Integer.class);
-        System.out.println("5" + propiedadId);
+        System.out.println("Entrado en Editar propiedadDao ");
 
-        query = "UPDATE PROPIEDAD SET NOMBRE = ?, PRECIO = ?, TIPO = ?, DESCRIPCION = ?, DIMENSIONES = ?, NUM_WC = ?, NUM_HABITACIONES = ?, DIRECCION = ?, PAIS = ?, ESTADO = ?, CUIDAD = ?, PROPIETARIO = ?, TELEFONO = ?, ESTADO_PROPIEDAD = ?, PROPIETARIO = ?, WHERE ID = ?";
+        String query = "UPDATE PROPIEDADES SET PRECIO = ?, TIPO = ?, DESCRIPCION = ?, DIMENSIONES = ?, NUM_WC = ?, NUM_HABITACIONES = ?, DIRECCION = ?, ESTADO_PROPIEDAD = ?, PROPIETARIO = ? WHERE ID = ?";
         int rowsUpdated = MySQLTemplate.update(query, objeto.getPrecio(), objeto.getTipo(),
                 objeto.getDescripcion(), objeto.getDimensiones(), objeto.getNum_wc(), objeto.getNum_habitaciones(),
                 objeto.getDireccion(), objeto.getEstado_Propiedad(), objeto.getPropietario(),
-                objeto.getImagen(),
                 objeto.getId());
         if (rowsUpdated >= 1) {
             ok = true;
