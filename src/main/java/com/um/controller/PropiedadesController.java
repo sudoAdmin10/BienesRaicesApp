@@ -89,16 +89,16 @@ public class PropiedadesController {
     }
 
     @RequestMapping(value = "/editarPropiedad", method = RequestMethod.POST)
-    public ModelAndView editarPropiedad(Propiedad propieddad) {
+    public ModelAndView editarPropiedad(Propiedad propiedad) {
         ModelAndView modelAndView = new ModelAndView();
         System.out.println("Entrando al Método POST de Editar Propiedad");
         System.out.println(
-                "Propiedad " + propieddad.getId() + " " + propieddad.getPrecio() + " " + propieddad.getDimensiones()
-                        + " " + propieddad.getPropietario() + " ");
+                "Propiedad " + propiedad.getId() + " " + propiedad.getPrecio() + " " + propiedad.getDimensiones()
+                        + " " + propiedad.getPropietario() + " ");
 
-        boolean result = propiedadDao.editarPropiedad(propieddad);
+        boolean result = propiedadDao.editarPropiedad(propiedad);
 
-        modelAndView = new ModelAndView("redirect:/propiedades/detalles?editar=" + result);
+        modelAndView = new ModelAndView("redirect:/propiedades/detalles?id=" + propiedad.getId() + "&editar=" + result);
         return modelAndView;
     }
 
@@ -114,17 +114,6 @@ public class PropiedadesController {
             propiedad_detalles = propiedadDao.buscaPropiedadPorId(id);
         }
 
-        Propiedad tmp = new Propiedad();
-
-        boolean showModal = false;
-        if (request.getParameter("id") != null) {
-            showModal = true;
-            tmp = propiedadDao.buscaPropiedadPorId(id);
-            System.out.println("Propiedad id 0====0 " + tmp.getId());
-        }
-
-        modelAndView.addObject("showModal", showModal);
-        modelAndView.addObject("tmp", tmp);
         modelAndView.addObject("detalles", propiedad_detalles);
         modelAndView.setViewName("detalles-propiedad");
 
@@ -133,7 +122,7 @@ public class PropiedadesController {
 
     @RequestMapping(value = "/propiedaes/detalles", method = RequestMethod.POST)
     public ModelAndView detallesPropiedad(Propiedad propieddad) {
-        ModelAndView modelAndView = new ModelAndView("redirect:/propiedades");
+        ModelAndView modelAndView = new ModelAndView("redirect:/propiedades/detalles");
 
         return modelAndView;
     }

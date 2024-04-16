@@ -35,7 +35,6 @@ public class PropiedadDao {
     public List<Propiedad> listaPropiedades() {
         List<Propiedad> lista_propiedades = new ArrayList<Propiedad>();
         String query = "SELECT * FROM PROPIEDADES ORDER BY CAST(PRECIO AS DECIMAL) DESC";
-        // String query = "SELECT * FROM PROPIEDADES";
 
         try {
             lista_propiedades = MySQLTemplate.query(query, new PropiedadMapper());
