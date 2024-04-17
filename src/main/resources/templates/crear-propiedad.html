@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -13,7 +13,7 @@
 
     <link rel="icon" type="image/x-icon" href="/img/xing.svg">
     <link rel="stylesheet" th:href="@{css/crea-propiedad.css}" />
-
+    <link rel="stylesheet" th:href="@{css/global.css}" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/c933420b11.js" crossorigin="anonymous"></script>
@@ -34,10 +34,10 @@
         <div class="model">
             <div class="model-container">
                 <div class="row">
-                    <h2 class="form-propiedades-title">Crear Nuevo</h2>
+                    <h2 class="form-propiedades-title">Crear Nueva Propiedad</h2>
+
                 </div>
                 <div class="row row-cols-1 row-cols-md-4 g-4">
-
                     <form th:action="@{/crear-propiedad}" th:object="${propiedad}" method="post"
                         class="form-propiedades">
 
@@ -53,16 +53,16 @@
                             <input class="form-control" type="hidden" th:field="*{estado_Propiedad}"
                                 id="estadoPropiedad" />
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <button value="1" type="button" class="btn boton-group" data-mdb-color="dark"
-                                    onclick="setEstado(1)">Venta</button>
-                                <button value="2" type="button" class="btn boton-group"
-                                    onclick="setEstado(2)">Renta</button>
+                                <select class="form-control ">
+                                    <option value="1">Venta</option>
+                                    <option value="2">Renta</option>
+                                </select>
                             </div>
                         </div>
 
                         <div class="input-block">
                             <label for="tipo">Tipo:</label>
-                            <select name="tipo" id="tipo" th:field="*{tipo}" required class="btn  dropdown-toggle">
+                            <select name="tipo" id="tipo" th:field="*{tipo}" required class="form-control">
                                 <option value="1">Casa</option>
                                 <option value="2">Departamento</option>
                                 <option value="3">Terreno</option>
@@ -70,29 +70,27 @@
                                 <option value="5">Oficina</option>
                                 <option value="6">Local</option>
                             </select>
-                            <br>
+
                         </div>
 
-                        <div class="col">
-                            <div class="input-block">
-                                <div class="input-label">
-                                    <label for="direccion">Dirección:</label>
-                                    <input class="form-control" type="text" th:field="*{direccion}"
-                                        placeholder="Direccion de la propiedad" name="direccion" required>
-                                </div>
+                        <div class="input-block">
+                            <div class="input-label">
+                                <label for="direccion">Dirección:</label>
+                                <input class="form-control" type="text" th:field="*{direccion}"
+                                    placeholder="Direccion de la propiedad" name="direccion" required>
                             </div>
                         </div>
 
-                        <div class="col">
 
-                            <div class="input-block">
-                                <div class="input-label">
-                                    <label for="dimensiones">Dimensiones (m²):</label>
-                                    <input class="form-control" type="text" th:field="*{dimensiones}"
-                                        placeholder="Dimension en metros cuadrados" name="dimensiones" required>
-                                </div>
+
+                        <div class="input-block">
+                            <div class="input-label">
+                                <label for="dimensiones">Dimensiones (m²):</label>
+                                <input class="form-control" type="text" th:field="*{dimensiones}"
+                                    placeholder="Dimension en metros cuadrados" name="dimensiones" required>
                             </div>
                         </div>
+
 
                         <div class="input-block">
                             <div class="input-label">
@@ -100,6 +98,7 @@
                                 <input class="form-control" type="text" name="num_wc" th:field="*{num_wc}" required>
                             </div>
                         </div>
+
                         <div class="input-block">
                             <div class="input-label">
                                 <label for="num_habitaciones">Número de Habitaciones:</label>
@@ -107,12 +106,14 @@
                                     th:field="*{num_habitaciones}" required>
                             </div>
                         </div>
+
                         <div class="input-block">
                             <div class="input-label">
                                 <label for="imagen">Agregue una imagen</label>
                                 <input class="form-control" type="file" name="imagen" th:field="*{imagen}" required><br>
                             </div>
                         </div>
+
                         <div class="input-block">
                             <div class="input-label">
                                 <label for="descripcion">Descripcion adicional de la propiedad</label>
@@ -121,16 +122,19 @@
                             </div>
                         </div>
 
-                        <div class="boton-guardar">
+                        <div style="text-align: center;">
                             <button class="input-button button-37 " type="submit">Crear</button>
                         </div>
 
                     </form>
 
+                    <div style="text-align: right;">
+                        <a href="/propiedades"><button class="input-button button-37 " type="submit"
+                                style="align-items: end;">Cancelar</button></a>
+                    </div>
+
                 </div>
-                <div class="boton-cancelar">
-                    <a href="/propiedades"><button class="input-button button-37 " type="submit">Cancelar</button></a>
-                </div>
+
             </div>
         </div>
     </section>
