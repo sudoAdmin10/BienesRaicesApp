@@ -17,12 +17,16 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.um.dao.UsuarioDao;
 import com.um.model.Usuario;
+import com.um.dao.AgenciaDao;
+import com.um.model.Agencia;
 
 @Controller
 public class UsuariosController {
 
 	@Autowired
 	private UsuarioDao usuarioDao;
+	@Autowired
+	private AgenciaDao agenciaDao;
 
 	@RequestMapping(value = { "/usuarios" }, method = RequestMethod.GET)
 	public ModelAndView usuarios(HttpServletRequest request) {
@@ -49,15 +53,14 @@ public class UsuariosController {
 			System.out.println("0====0 " + tmp.getId());
 		}
 
-		Usuario agencias = new Usuario();
-
-		agencias = usuarioDao.buscaAgenciaUsuario();
+		Agencia agencias = new Agencia();
 
 		boolean result = request.getParameter("borrar") == null ? false
 				: Boolean.parseBoolean(request.getParameter("borrar"));
 
 		modelAndView.addObject("Borrar este usuario", result);
 		modelAndView.addObject("role", role);
+		modelAndView.addObject("mapaAgencias", agenciaDao.mapaAgencias());
 		modelAndView.addObject("lista", usuarioDao.listaUsuarios());
 		modelAndView.addObject("agencias", agencias);
 		modelAndView.addObject("mensaje", mensaje);

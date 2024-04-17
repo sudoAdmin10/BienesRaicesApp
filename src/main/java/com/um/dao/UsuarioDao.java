@@ -8,8 +8,10 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
+import com.um.mapper.AgenciaMapper;
 import com.um.mapper.UsuarioMapper;
 import com.um.model.Usuario;
+import com.um.model.Agencia;
 
 @Component
 public class UsuarioDao {

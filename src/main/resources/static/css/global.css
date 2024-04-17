@@ -140,3 +140,35 @@ button:hover {
     box-shadow: #683c23 0 3px 9px 0;
     transform: translateY(-2px);
 }
+
+.img-banner-nosotros {
+    background-image: url('../img/fondoInicio.jpg');
+    background-position: 0% 60%;
+    background-size: cover;
+    background-repeat: repeat;
+    opacity: 0.7;
+}
+
+.titulo-banner {
+    position: relative;
+    color: aliceblue;
+
+    h4 {
+        color: #ffffff;
+        font-family: "Raleway", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 60px;
+
+    }
+
+}
+
+.subtitulo-banner {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    color: #ffffff;
+    text-align: center;
+    font-weight: 600;
+}

@@ -36,6 +36,15 @@
             title="Cerrar sesión"><i class="fa-solid fa-arrow-right-from-bracket"></i></a> -->
 	</header>
 
+	<section class="banner text-center py-5 img-banner-nosotros" style="height: 300px;">
+		<div class="titulo-banner">
+			<h4>Bienes Raíces XYZ</h4>
+			<p class="subtitulo-banner">Bienvenido a ALPHA, tu socio confiable en el mundo de los bienes raíces en
+				México. Desde nuestros modestos comienzos, nos hemos dedicado a brindar servicios excepcionales y
+				soluciones integrales para satisfacer las necesidades de nuestros clientes.</p>
+		</div>
+	</section>
+
 	<div class="container">
 
 		<!-- <a th:href="@{/regresar}" class="btn btn-primary btn-xs" data-toggle="tooltip" data-placement="top"
@@ -56,7 +65,8 @@
 					<td th:text="${d.index + 1}"></td>
 					<td th:text="${decla.nombre}"></td>
 					<td th:text="${decla.activo}"></td>
-					<td th:text="${decla.agencia_id}"></td>
+					<td th:if="${mapaAgencias} != 0" th:text="${mapaAgencias[__${decla.agencia_id}__].nombre}">
+					</td>
 					<td th:text="${decla.status}"></td>
 					<td align="center">
 						<a th:href="@{/usuarios?id={id}(id=${decla.id})}" class="btn " data-toggle="tooltip"
@@ -69,20 +79,7 @@
 		</table>
 	</div>
 
-	<div class="container">
-		<table class="table content-table" th:action="@{/usuarios}">
-			<thead>
-				<tr>
-					<th class="col-md-1">Agencias</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:object="${agencias}">
-					<td th:field="*{nombre}"></td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+
 
 	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
