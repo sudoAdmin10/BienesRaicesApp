@@ -24,7 +24,6 @@ public class UsuarioDao {
 
 	public Usuario buscaAgenciaUsuario() {
 		Usuario objeto = new Usuario();
-		System.out.println("AGENCIA DAO	");
 		String query = "SELECT NOMBRE FROM AGENCIAS";
 
 		try {
@@ -67,7 +66,7 @@ public class UsuarioDao {
 				objeto.getNombre(), objeto.getEmail(), objeto.getPassword(), grabaRoles
 		};
 
-		query = "INSERT INTO USUARIO(NOMBRE,EMAIL,PASSWORD,ROLES,ACTIVO, AGENCIA_ID, STATUS ) VALUES(?, ?, ?, ?, TRUE, 0, '-' )";
+		query = "INSERT INTO USUARIO(NOMBRE,EMAIL,PASSWORD,ROLES,ACTIVO, AGENCIA_ID, STATUS ) VALUES(?, ?, ?, ?, TRUE, 1, '-' )";
 
 		if (MySQLTemplate.update(query, parametros) >= 1) {
 			query = "SELECT ID FROM USUARIO WHERE NOMBRE = ? AND EMAIL = ?";

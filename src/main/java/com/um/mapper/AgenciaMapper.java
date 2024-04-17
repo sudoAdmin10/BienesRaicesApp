@@ -16,6 +16,7 @@ public class AgenciaMapper implements RowMapper<Agencia> {
         objeto.setNombre(rs.getString("NOMBRE"));
         objeto.setDireccion(rs.getString("DIRECCION"));
         objeto.setTelefono(rs.getString("TELEFONO"));
+
         return objeto;
     }
 }

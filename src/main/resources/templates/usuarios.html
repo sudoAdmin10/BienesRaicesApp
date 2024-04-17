@@ -53,10 +53,9 @@
 			<thead>
 				<tr>
 					<th class="col-md-1">N°</th>
-					<th class="col-md-3">Nombre</th>
+					<th class="col-md-2">Nombre</th>
 					<th class="col-md-2">Activo</th>
 					<th class="col-md-2">Agencia</th>
-					<th class="col-md-2">Status</th>
 					<th class="col-md-2">Acciones</th>
 				</tr>
 			</thead>
@@ -66,9 +65,7 @@
 					<td th:text="${decla.nombre}"></td>
 					<td th:text="${decla.activo}"></td>
 					<td th:if="${mapaAgencias} != 0" th:text="${mapaAgencias[__${decla.agencia_id}__].nombre}">
-					</td>
-					<td th:text="${decla.status}"></td>
-					<td align="center">
+					<td align="left">
 						<a th:href="@{/usuarios?id={id}(id=${decla.id})}" class="btn " data-toggle="tooltip"
 							data-placement="top" title="Editar"><i class="fa-solid fa-pen-to-square"></i></a>
 						<a th:href="@{/borrar?id={id}(id=${decla.id})}" class="btn " data-toggle="tooltip"

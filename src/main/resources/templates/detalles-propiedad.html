@@ -35,10 +35,11 @@
             </div>
             <div class="col-md-6 ">
                 <div class="title-detalle">
-                    <h5 th:text="${p.tipo} + ' en ' + ${p.estado_Propiedad} "></h5>
+                    <h5 th:if="${mapaTipoInmueble} !=0 and ${mapaEstadoInmueble} !=0"
+                        th:text="${mapaTipoInmueble[__${p.tipo}__].tipo_inmueble} + ' en ' + ${mapaEstadoInmueble[__${p.estado_Propiedad}__].estado}  ">
+                    </h5>
                     <p th:text="${p.direccion}"></p>
                 </div>
-
 
                 <div class="title-detalle ">
                     <h5>Precio: </h5>

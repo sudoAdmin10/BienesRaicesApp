@@ -113,7 +113,8 @@ public class PropiedadesController {
         if (request.getParameter("id") != null) {
             propiedad_detalles = propiedadDao.buscaPropiedadPorId(id);
         }
-
+        modelAndView.addObject("mapaTipoInmueble", propiedadDao.mapaTipoInmueble());
+        modelAndView.addObject("mapaEstadoInmueble", propiedadDao.mapaEstadoInmueble());
         modelAndView.addObject("detalles", propiedad_detalles);
         modelAndView.setViewName("detalles-propiedad");
 

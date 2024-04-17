@@ -1,6 +1,7 @@
 package com.um.dao;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,8 +9,12 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
+import com.um.mapper.EstadoPropiedadMapper;
 import com.um.mapper.PropiedadMapper;
+import com.um.model.Estado_Propiedades;
 import com.um.model.Propiedad;
+import com.um.model.TipoInmueble;
+import com.um.mapper.TipoImuebleMapper;
 
 @Component
 public class PropiedadDao {
@@ -172,6 +177,40 @@ public class PropiedadDao {
         }
 
         return ok;
+    }
+
+    public HashMap<Integer, TipoInmueble> mapaTipoInmueble() {
+        HashMap<Integer, TipoInmueble> tipoInmueble = new HashMap<Integer, TipoInmueble>();
+        List<TipoInmueble> listaInmuebles = new ArrayList<TipoInmueble>();
+
+        String query = "SELECT * FROM TIPO_INMUEBLE";
+        try {
+            listaInmuebles = MySQLTemplate.query(query, new TipoImuebleMapper());
+            for (TipoInmueble tipo : listaInmuebles) {
+                tipoInmueble.put(tipo.getId(), tipo);
+            }
+        } catch (Exception e) {
+            System.out.println("ERROR : PropiedadesDao | mapaTipoInmueble | " + e);
+        }
+
+        return tipoInmueble;
+    }
+
+    public HashMap<Integer, Estado_Propiedades> mapaEstadoInmueble() {
+        HashMap<Integer, Estado_Propiedades> estadoInmueble = new HashMap<Integer, Estado_Propiedades>();
+        List<Estado_Propiedades> listaEstados = new ArrayList<Estado_Propiedades>();
+
+        String query = "SELECT * FROM ESTADO_PROPIEDADES";
+        try {
+            listaEstados = MySQLTemplate.query(query, new EstadoPropiedadMapper());
+            for (Estado_Propiedades tipo : listaEstados) {
+                estadoInmueble.put(tipo.getId(), tipo);
+            }
+        } catch (Exception e) {
+            System.out.println("ERROR : PropiedadesDao | mapaEstadoInmueble | " + e);
+        }
+
+        return estadoInmueble;
     }
 
 }
