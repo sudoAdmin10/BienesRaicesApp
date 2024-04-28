@@ -37,7 +37,7 @@
 
 <body>
 
-    <header class="header-navbar">
+    <header class="header-navbar container">
         <a href="/inicio"> <img class="logo-navbar" src="../img/xing.svg" alt="logo" href="/inicio"></a>
         <nav class="nav-links">
             <a href="#"><button class="button-37" type="button">Inicio</button></a>
@@ -54,19 +54,217 @@
     <section class="section-header ">
         <div class="fondo">
             <div class="container text-center position-absolute top-50 start-50 translate-middle">
-                <h1 class="display-2 title">Bienvenido a Bienes Raíces ALPHA</h1>
-                <p class="lead subtitle">Tu destino para encontrar la propiedad de tus sueños</p>
+                <div class="col-8 principal-title">
+                    <h1 class="display-2 title">Let's find a home that's perfect for you</h1>
+                </div>
+                <p class="lead subtitle">Search confidently with your trusted source of homes for sale or rent</p>
+                <div class="d-flex">
+                    <div class="col-md-4">
+
+                    </div>
+                    <div class="col-md-4">
+                        <form>
+                            <input class="form-control" type="search" placeholder="Enter and adrress, city or ZIP code"
+                                aria-label="Search">
+                        </form>
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn btn-outline search" type="submit"><i
+                                class="fa-solid fa-magnifying-glass"></i>Search</button>
+
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="container bg-light section-config">
+    <section>
+        <div class="container bg-light section-1">
+            <div class=" sub-div">
+
+                <h4 class="sub-1">Ehm, so?</h4>
+                <h3 class="sub-2">What we do</h3>
+                <p class="sub-3">Full-Service Agents Modern Technology</p>
+
+            </div>
+            <div class="d-flex card-section-1-gap">
+                <div class="card card-section-1 ">
+                    <div class="container" style="align-items: center; text-align: center;">
+                        <div class="circle">
+                            <i class="fa-regular fa-comment fa-3x" style="color: #ffffff;"></i>
+                        </div>
+                        <div style="margin-top: 30px;">
+                            <p class="sub-card-section-1">Communication</p>
+                            <p>Simple point of contact, in sync with the tools you use. We speak your language</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-section-1 ">
+                    <div class="container" style="align-items: center; text-align: center;">
+                        <div class="circle">
+                            <i class="fa-solid fa-wand-magic-sparkles fa-2x" style="color: #ffffff;"></i>
+                        </div>
+                        <div style="margin-top: 30px;">
+                            <p class="sub-card-section-1">Quality First</p>
+                            <p>Quality first. All projects are backend by our ganatic support & 100% satisfaction
+                                guarantee
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="card card-section-1 ">
+                    <div class="container" style="align-items: center; text-align: center;">
+                        <div class="circle">
+                            <i class="fa-solid fa-shield-halved fa-3x" style="color: #ffffff;"></i>
+                        </div>
+                        <div style="margin-top: 30px;">
+                            <p class="sub-card-section-1">Reabilty</p>
+                            <p>We keep our promises, provide upfront timelines and bring predictability</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="card card-section-1 ">
+                    <div class="container" style="align-items: center; text-align: center;">
+                        <div class="circle">
+                            <i class="fa-solid fa-user-group fa-2x" style="color: #ffffff;"></i>
+                        </div>
+                        <div style="margin-top: 30px;">
+                            <p class="sub-card-section-1">Families</p>
+                            <p>Rent a beautiful house for your family, choose form best in societies or individual
+                                apartments
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container section-2">
+        <div style="text-align: center;">
+            <h3 class="title-section-2"> Move to What Moves You</h3>
+            <p class="sub-section-2">Keep calm & tavel on</p>
+        </div>
+
+        <div class="row row-cols-md-3 g-4" style=" margin-top: 30px; align-items: center; text-align: center;">
+            <div class="">
+                <img th:src="@{'/images/casa24.jpg'}" class="img-section-2">
+                <div class="text-section-2">
+                    <p class="sub-section-2">Enjoy the grate house</p>
+                    <button class="button-properties">6,872 properties</button>
+                </div>
+            </div>
+
+            <div class="">
+                <img th:src="@{'/images/casa11.jpg'}" class="img-section-2">
+                <div class="text-section-2">
+                    <p class="sub-section-2">Pick up aerliest sunrise</p>
+                    <button class="button-properties">8,973 properties</button>
+                </div>
+
+            </div>
+            <div class="">
+                <img th:src="@{'/images/casa9.jpg'}" class="img-section-2">
+                <div class="text-section-2">
+                    <p class="sub-section-2">Unique stay</p>
+                    <button class="button-properties">7,526 properties</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="container bg-light section-3">
+        <div class=" sub-div2">
+            <h4 class="sub-1">Come Now!</h4>
+            <h3 class="sub-2">Live Who You Are</h3>
+            <p class="sub-3">Own the Home Meant for You</p>
+        </div>
+
+        <div class="row row-cols-md-6 "
+            style=" margin-top: 30px; align-items: center; column-gap: 30px; margin-left: 30px;">
+            <div class="card card-section-3">
+                <div class="container">
+                    <img th:src="@{'/images/casa20.jpg'}" class="img-section-3">
+                    <div class="text-section-3 row">
+                        <p class="sub-card-section-1 ">The Grate State</p>
+                        <div class="">
+                            <p class="">Moscow, Rus <strong style="margin-left: 25px;">$521</strong>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-section-3">
+                <div class="container">
+                    <img th:src="@{'/images/casa7.jpg'}" class="img-section-3">
+                    <div class="text-section-3 row">
+                        <p class="sub-card-section-1 ">Luxury House</p>
+                        <div class="">
+                            <p class="">Pekin, Ch <strong style="margin-left: 25px;">$652</strong>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-section-3">
+                <div class="container">
+                    <img th:src="@{'/images/casa12.jpg'}" class="img-section-3">
+                    <div class="text-section-3 row">
+                        <p class="sub-card-section-1 ">Boxy Station</p>
+                        <div class="">
+                            <p class="">Sao Paulo, Br <strong style="margin-left: 25px;">$521</strong>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-section-3">
+                <div class="container">
+                    <img th:src="@{'/images/casa19.jpg'}" class="img-section-3">
+                    <div class="text-section-3 row">
+                        <p class="sub-card-section-1 ">The Grant Hotel</p>
+                        <div class="">
+                            <p class="">Paris, Fr <strong style="margin-left: 25px;">$490</strong>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-section-3">
+                <div class="container">
+                    <img th:src="@{'/images/casa6.jpg'}" class="img-section-3">
+                    <div class="text-section-3 row">
+                        <p class="sub-card-section-1 ">Hostel State</p>
+                        <div class="">
+                            <p class="">Rome, Ity <strong style="margin-left: 25px;">$784</strong>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="container section-config">
         <div class="container titulo">
             <h2 class="text-center" style="text-transform: uppercase;">Nuestras Propiedades Destacadas</h2>
             <h3 class="text-center" style="font-size: large;">Seleccionamos nuestras mejores opciones para ti
             </h3>
         </div>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="row row-cols-md-3 g-4">
             <div class="col" th:each="p : ${lista_propiedades_destacadas}">
                 <div class="card h-100">
                     <img th:src="@{'/images/'} + ${p.imagen}" class="card-img-top" alt="Imagen Propiedad" width="100"
@@ -97,52 +295,6 @@
     </section>
 
 
-    <section>
-        <div class="fondo-banner">
-            <div class="col">
-                <div class="col-banner">
-                    <i class="fa-solid fa-user-plus icon-banner"></i>
-                    <h4> <strong>35,000+</strong></h4>
-                    <p>usuarios registrados</p>
-                </div>
-            </div>
-            <div class="col">
-                <div class="col-banner">
-                    <i class="fa-solid fa-dollar-sign icon-banner"></i>
-                    <h4><strong>400,000,000+</strong></h4>
-                    <p>pesos financiados</p>
-                </div>
-            </div>
-            <div class="col">
-                <div class="col-banner">
-                    <i class="fa-solid fa-city icon-banner"></i>
-                    <h4><strong>80+</strong></h4>
-                    <p>ofertas fondeadas</p>
-                </div>
-            </div>
-            <div class="col">
-                <div class="col-banner">
-                    <i class="fa-solid fa-arrow-up-right-dots icon-banner"></i>
-                    <h4><strong>172,000,000+</strong></h4>
-                    <p>de peosos entragados a nuestros inversionistas </p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section>
-        <div class="container bg-light ">
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230187.65263313!2d-100.47381254759354!3d25.648675256072394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86629531b437f8f5%3A0xa3d3d3ca6ac89894!2sMonterrey%2C%20N.L.!5e0!3m2!1ses-419!2smx!4v1711435147452!5m2!1ses-419!2smx"
-                        width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <footer class="footter">
         <div class="footter-container">
