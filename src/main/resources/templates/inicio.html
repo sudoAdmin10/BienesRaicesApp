@@ -259,35 +259,35 @@
     </section>
 
     <section class="container section-config">
-        <div class="container titulo">
-            <h2 class="text-center" style="text-transform: uppercase;">Nuestras Propiedades Destacadas</h2>
-            <h3 class="text-center" style="font-size: large;">Seleccionamos nuestras mejores opciones para ti
-            </h3>
-        </div>
-        <div class="row row-cols-md-3 g-4">
-            <div class="col" th:each="p : ${lista_propiedades_destacadas}">
-                <div class="card h-100">
-                    <img th:src="@{'/images/'} + ${p.imagen}" class="card-img-top" alt="Imagen Propiedad" width="100"
-                        height="400">
-                    <div class="card-body">
-                        <h5 class="card-title" th:text=" 'Precio: $' + ${p.precio}"></h5>
-                        <p class="card-text" th:text="${p.descripcion}"></p>
-                    </div>
-                    <div class="card-info-container">
-                        <div class="icon-text-container">
-                            <i class="fa-solid fa-toilet"></i>
-                            <p class="card-text" th:text="${p.num_wc}"></p>
+        <h2 class="title-section-2" style="text-align: center;">OUR FEATURED PROPERTIES</h2>
+        <h3 class="sub-section-2" style="text-align: center; margin-bottom: 30px;">We Select Our Best Options For You
+        </h3>
+        <div class="bg-light container seccion-4">
+            <div class="row row-cols-md-3 g-4">
+                <div class="col" th:each="p : ${lista_propiedades_destacadas}">
+                    <div class="card h-100" style="border-radius: 20px">
+                        <img th:src="@{'/images/'} + ${p.imagen}" class="card-img-top img-destacadas"
+                            alt="Imagen Propiedad" width="100" height="400">
+                        <div class="card-body">
+                            <h5 class="card-title" th:text="'$'+${p.precio}"></h5>
+                            <p class="card-text" th:text="${p.descripcion}"></p>
                         </div>
-                        <div class="icon-text-container">
-                            <i class="fa-solid fa-bed"></i>
-                            <p class="card-text" th:text="${p.num_habitaciones}"></p>
+                        <div class="card-info-container">
+                            <div class="icon-text-container">
+                                <i class="fa-solid fa-toilet"></i>
+                                <p class="card-text" th:text="${p.num_wc}"></p>
+                            </div>
+                            <div class="icon-text-container">
+                                <i class="fa-solid fa-bed"></i>
+                                <p class="card-text" th:text="${p.num_habitaciones}"></p>
+                            </div>
+                            <div class="icon-text-container">
+                                <i class="fa-brands fa-codepen"></i>
+                                <p class="card-text" th:text="${p.dimensiones} + ' m²'"></p>
+                            </div>
+                            <a th:href="@{/propiedades/detalles?id={id}(id=${p.id})}" class="button button1"
+                                style="margin-bottom: 15px;">Ver más</a>
                         </div>
-                        <div class="icon-text-container">
-                            <i class="fa-brands fa-codepen"></i>
-                            <p class="card-text" th:text="${p.dimensiones} + ' m²'"></p>
-                        </div>
-                        <a th:href="@{/propiedades/detalles?id={id}(id=${p.id})}" class="button button1"
-                            style="margin-bottom: 15px;">Ver más</a>
                     </div>
                 </div>
             </div>

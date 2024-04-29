@@ -51,7 +51,7 @@ public class PropiedadDao {
 
     public List<Propiedad> listaPropiedadesDestacadas() {
         List<Propiedad> lista_propiedades_destacadas = new ArrayList<Propiedad>();
-        String query = "SELECT * FROM PROPIEDADES WHERE ID BETWEEN 23 AND 30 ORDER BY CAST(PRECIO AS DECIMAL) DESC";
+        String query = "SELECT * FROM PROPIEDADES WHERE ID BETWEEN 24 AND 30 ORDER BY CAST(PRECIO AS DECIMAL) DESC";
 
         try {
             lista_propiedades_destacadas = MySQLTemplate.query(query, new PropiedadMapper());

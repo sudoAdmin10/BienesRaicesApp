@@ -61,9 +61,8 @@ body {
 }
 
 .section-config {
-  padding-top: 10px;
   padding-bottom: 30px;
-  margin-top: 200px;
+  margin-top: 120px;
 }
 
 .card-info-container {
@@ -292,4 +291,26 @@ p {
   margin-top: 60px;
   padding-top: 30px;
 
+}
+
+/****  ****/
+
+.seccion-4 {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  border-radius: 20px;
+
+}
+
+.img-destacadas {
+  padding: 10px;
+  border-radius: 25px;
+  background-size: cover;
+}
+
+.card-title {
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: #683c23;
 }
