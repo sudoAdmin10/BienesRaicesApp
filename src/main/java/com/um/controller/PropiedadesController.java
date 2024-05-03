@@ -61,7 +61,7 @@ public class PropiedadesController {
 
     @RequestMapping(value = { "/crear-propiedad" }, method = RequestMethod.POST)
     public ModelAndView crearPropiedad(Propiedad propiedad) {
-        int propiedadEstado = propiedad.getEstado_Propiedad();
+        int propiedadEstado = 1;
 
         int propiedadTipo = propiedad.getTipo();
 

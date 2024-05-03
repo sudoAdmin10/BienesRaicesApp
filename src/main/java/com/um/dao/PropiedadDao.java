@@ -14,6 +14,9 @@ import com.um.mapper.PropiedadMapper;
 import com.um.model.Estado_Propiedades;
 import com.um.model.Propiedad;
 import com.um.model.TipoInmueble;
+
+import ch.qos.logback.core.net.SyslogOutputStream;
+
 import com.um.mapper.TipoImuebleMapper;
 
 @Component
@@ -63,6 +66,7 @@ public class PropiedadDao {
 
     public boolean grabaPropiedad(Propiedad objeto, int estados, int tipos, int[] porpietarios) {
         System.out.println("Entrando al metodo de Grabar Propiedad");
+        System.out.println("ESTADO PROPIEDAD EN DAO " + estados);
         boolean ok = false;
 
         String query = "SELECT ID FROM USUARIO WHERE ID = ?";
