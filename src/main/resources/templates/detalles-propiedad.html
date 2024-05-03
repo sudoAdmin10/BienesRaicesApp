@@ -39,13 +39,12 @@
             title="Cerrar sesión"><i class="fa-solid fa-arrow-right-from-bracket"></i></a> -->
     </header>
 
-    <div th:if="${result}" class="alert alert-success">
-        <strong>Success!</strong> Indicates a successful or positive action.
+    <div th:if="${edit != null}" class="alert alert-warning" role="alert"
+        style="align-items: center; text-align: center;">
+        <strong>Edited!</strong> <label th:text="${edit}"></label>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 
-    <div th:if="${result}" class="alert alert-danger">
-        <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
-    </div>
     <section style="margin: 30px;">
         <div class="row " th:each="p : ${detalles}">
             <div class="col-md-7">

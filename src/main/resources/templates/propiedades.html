@@ -63,6 +63,19 @@
                 New</button></a>
     </div>
 
+
+    <div th:if="${success != null}" class="alert alert-success" role="alert"
+        style="align-items: center; text-align: center;">
+        <strong>Success!</strong> <label th:text="${success}"></label>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <div th:if="${delete != null}" class="alert alert-danger" role="alert">
+        <strong>Deleted!</strong> <label th:text="${delete}"></label>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+    </div>
+
     <section class="container bg-light section-properties">
 
         <div class="row row-cols-1 row-cols-md-4 g-4">

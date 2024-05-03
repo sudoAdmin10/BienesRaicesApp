@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.um.dao.PropiedadDao;
 import com.um.model.Propiedad;
@@ -60,7 +61,7 @@ public class PropiedadesController {
     }
 
     @RequestMapping(value = { "/crear-propiedad" }, method = RequestMethod.POST)
-    public ModelAndView crearPropiedad(Propiedad propiedad) {
+    public ModelAndView crearPropiedad(Propiedad propiedad, RedirectAttributes atribute) {
         int propiedadEstado = 1;
 
         int propiedadTipo = propiedad.getTipo();
@@ -68,6 +69,8 @@ public class PropiedadesController {
         int[] propietario = new int[1];
 
         propietario[0] = 6;
+        System.out.println("Property Saved Sucessfully!!");
+        atribute.addFlashAttribute("success", "Property Saved Sucessfully!!");
 
         propiedadDao.grabaPropiedad(propiedad, propiedadEstado, propiedadTipo, propietario);
         ModelAndView modelAndView = new ModelAndView("redirect:/propiedades");
@@ -82,7 +85,7 @@ public class PropiedadesController {
     }
 
     @RequestMapping(value = "/editarPropiedad", method = RequestMethod.POST)
-    public ModelAndView editarPropiedad(Propiedad propiedad) {
+    public ModelAndView editarPropiedad(Propiedad propiedad, RedirectAttributes atribute) {
         ModelAndView modelAndView = new ModelAndView();
         System.out.println("Entrando al Método POST de Editar Propiedad");
         System.out.println(
@@ -93,12 +96,13 @@ public class PropiedadesController {
         modelAndView.addObject("result", result);
         System.out.println("RESULT " + result);
 
+        atribute.addFlashAttribute("edit", "Property Edited Sucessfully!!");
         modelAndView = new ModelAndView("redirect:/propiedades/detalles?id=" + propiedad.getId() + "&editar=" + result);
         return modelAndView;
     }
 
     @RequestMapping(value = "/propiedades/detalles", method = RequestMethod.GET)
-    public ModelAndView detalles(HttpServletRequest request) {
+    public ModelAndView detalles(HttpServletRequest request, RedirectAttributes atribute) {
         ModelAndView modelAndView = new ModelAndView();
 
         Propiedad propiedad_detalles = new Propiedad();
@@ -108,6 +112,8 @@ public class PropiedadesController {
         if (request.getParameter("id") != null) {
             propiedad_detalles = propiedadDao.buscaPropiedadPorId(id);
         }
+
+        atribute.addFlashAttribute("edit", "Property Edited Sucessfully!!");
         modelAndView.addObject("mapaTipoInmueble", propiedadDao.mapaTipoInmueble());
         modelAndView.addObject("mapaEstadoInmueble", propiedadDao.mapaEstadoInmueble());
         modelAndView.addObject("detalles", propiedad_detalles);
@@ -124,7 +130,7 @@ public class PropiedadesController {
     }
 
     @RequestMapping(value = "/borrarPropiedad", method = RequestMethod.GET)
-    public ModelAndView borrarPropiedadGET(HttpServletRequest request) {
+    public ModelAndView borrarPropiedadGET(HttpServletRequest request, RedirectAttributes atribute) {
         ModelAndView modelAndView = new ModelAndView();
 
         int id = request.getParameter("id") == null ? 0 : Integer.parseInt(request.getParameter("id"));
@@ -137,13 +143,15 @@ public class PropiedadesController {
             result = propiedadDao.borrarPropiedadPorId(id);
         }
 
+        atribute.addFlashAttribute("delete", "Property Deleted Sucessfully!!");
         modelAndView = new ModelAndView("redirect:/propiedades?borrar=" + result);
 
         return modelAndView;
     }
 
     @RequestMapping(value = "/borrarPropiedadConfirmacion", method = RequestMethod.POST)
-    public ModelAndView borrarPropiedadPOST(@ModelAttribute("propiedad") Propiedad propiedad) {
+    public ModelAndView borrarPropiedadPOST(@ModelAttribute("propiedad") Propiedad propiedad,
+            RedirectAttributes atribute) {
         ModelAndView modelAndView = new ModelAndView();
 
         System.out.println("BorrarPropiedadPOST ID " + propiedad.getId());
@@ -153,6 +161,7 @@ public class PropiedadesController {
         System.out.println("ID usuario " + id);
         boolean result = propiedadDao.borrarPropiedadPorId(id);
 
+        atribute.addFlashAttribute("delete", "Property Deleted Sucessfully!!");
         modelAndView = new ModelAndView("redirect:/propiedades?borrar=" + result);
         return modelAndView;
     }
