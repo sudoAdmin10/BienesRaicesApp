@@ -40,12 +40,12 @@
     <header class="header-navbar container">
         <a href="/inicio"> <img class="logo-navbar" src="../img/xing.svg" alt="logo" href="/inicio"></a>
         <nav class="nav-links">
-            <a href="#"><button class="button-37" type="button">Inicio</button></a>
-            <a th:href="@{/usuarios}"><button class="button-37" type="button">Usuarios</button></a>
-            <a href="/nosotros"><button class="button-37" type="button">Nosotros</button></a>
-            <a href="/propiedades"><button class="button-37" type="button">Propiedades</button></a>
+            <a href="#"><button class="button-37" type="button">Home</button></a>
+            <a th:href="@{/usuarios}"><button class="button-37" type="button">Users</button></a>
+            <a href="/nosotros"><button class="button-37" type="button">About Us</button></a>
+            <a href="/propiedades"><button class="button-37" type="button">Properties</button></a>
         </nav>
-        <a class="fp" href="/registrar"><button class="button-37" type="button">Registrate</button></a>
+        <a class="fp" href="/registrar"><button class="button-37" type="button">Sign In</button></a>
         <!-- <a class="btn btn-outline-light" th:href="@{/logout}" data-bs-toggle="tooltip" data-bs-placement="bottom"
             title="Cerrar sesión"><i class="fa-solid fa-arrow-right-from-bracket"></i></a> -->
     </header>
@@ -285,7 +285,7 @@
                                 <i class="fa-brands fa-codepen"></i>
                                 <p class="card-text" th:text="${p.dimensiones} + ' m²'"></p>
                             </div>
-                            <a th:href="@{/propiedades/detalles?id={id}(id=${p.id})}" class="button button1"
+                            <a th:href="@{/propiedades/detalles?id={id}(id=${p.id})}" class="button"
                                 style="margin-bottom: 15px;">Ver más</a>
                         </div>
                     </div>

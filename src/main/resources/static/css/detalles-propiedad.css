@@ -15,60 +15,95 @@ body {
     display: flex;
 }
 
-.card-img {
-    margin-bottom: 20px;
+
+.imgs {
+
+    display: flex;
+}
+
+.img1 {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     border-radius: 8px;
+    height: 400px;
     width: auto;
+    margin: 10px;
+}
 
-    img {
-        background-size: cover;
-        background-position: center;
-        opacity: 0.9;
-        background-repeat: no-repeat;
-        border-radius: 8px;
-        height: 400px;
-    }
+.img2 {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    height: 300px;
+    width: 300px;
+    margin: 10px;
 
-    .card-text {
-        margin-bottom: 20px;
-        border-radius: 8px;
-        width: auto;
-        overflow: hidden;
-    }
+}
 
-    .card-img-top {
-        object-fit: cover;
-    }
+.img3 {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    height: 300px;
+    width: 300px;
+    margin: 10px;
+}
 
-    .card-title {
-        margin-bottom: 10px;
-        font-size: 18px;
-        font-weight: bold;
-    }
+.title-propertie {
+    color: #000000;
+    font-family: "Raleway", sans-serif;
+    font-weight: 800;
+    font-size: 50px;
+    margin: 15px;
+    text-align: center;
+}
 
-    .icon-text-container {
-        display: flex;
-        flex-direction: row;
+.text-propertie {
+    align-items: center;
+    text-align: center;
+    margin-top: 25px;
+    text-align: left;
+    font-size: 16px;
+}
 
-    }
+.price {
+    align-items: center;
+    text-align: center;
+    margin-top: 25px;
+    text-align: left;
+    font-size: 20px;
+    font-weight: 800;
+}
 
-    .text-container {
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        margin-bottom: 8px;
-    }
+.circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #8c7569;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    i.fa-solid,
-    i.fa-brands {
-        margin-right: 10px;
-        font-size: 18px;
-    }
+.icons-properties {
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+}
 
+.p-properties {
+    align-items: baseline;
+    text-align: center;
+    margin-left: -20px;
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: 600;
+}
 
-    .title-detalle {
-
-        h5 {
-            font-size: 30px;
-        }
-    }
+.btn-return-properties {
+    margin-top: 250px;
+    margin-left: 400px;
+}

@@ -9,6 +9,14 @@ body {
   padding: 30px;
 }
 
+.title {
+  color: #ffffff;
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
 .fondo {
   background-image: url('../img/fondoInicio.jpg');
   height: 750px;
@@ -23,13 +31,6 @@ body {
   margin-left: 230px;
 }
 
-.title {
-  color: #ffffff;
-  font-family: "Raleway", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
-}
 
 .subtitle {
   color: #ffffff;
@@ -192,15 +193,16 @@ p {
 }
 
 /**** SECTION 2 ****/
-.section-2 {
-  margin-top: 300px;
-}
 
 .title-section-2 {
   color: #000000;
   font-family: "Raleway", sans-serif;
   font-weight: 800;
   font-size: 50px;
+}
+
+.section-2 {
+  margin-top: 300px;
 }
 
 .sub-section-2 {
@@ -282,7 +284,6 @@ p {
   text-align: center;
   margin-top: 25px;
   text-align: left;
-
 }
 
 .sub-div2 {

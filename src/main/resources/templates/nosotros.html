@@ -27,119 +27,132 @@
 
 <body>
 
-    <header class="header-navbar">
+    <header class="header-navbar container">
         <a href="/inicio"> <img class="logo-navbar" src="../img/xing.svg" alt="logo" href="/inicio"></a>
         <nav class="nav-links">
-            <a href="/inicio"><button class="button-37" type="button">Inicio</button></a>
-            <a th:href="@{/usuarios}"><button class="button-37" type="button">Usuarios</button></a>
-            <a href="/nosotros"><button class="button-37" type="button">Nosotros</button></a>
-            <a href="/propiedades"><button class="button-37" type="button">Propiedades</button></a>
+            <a href="/inicio"><button class="button-37" type="button">Home</button></a>
+            <a th:href="@{/usuarios}"><button class="button-37" type="button">Users</button></a>
+            <a href="/nosotros"><button class="button-37" type="button">About Us</button></a>
+            <a href="/propiedades"><button class="button-37" type="button">Properties</button></a>
         </nav>
-        <a class="fp" href="/registrar"><button class="button-37" type="button">Registrate</button></a>
+        <a class="fp" href="/registrar"><button class="button-37" type="button">Sing In</button></a>
         <!-- <a class="btn btn-outline-light" th:href="@{/logout}" data-bs-toggle="tooltip" data-bs-placement="bottom"
             title="Cerrar sesión"><i class="fa-solid fa-arrow-right-from-bracket"></i></a> -->
     </header>
 
-    <section class="banner text-center py-5 img-banner-nosotros" style="height: 300px;">
+    <section class="py-5 img-banner-nosotros">
         <div class="titulo-banner">
-            <h4>Bienes Raíces XYZ</h4>
-            <p class="lead">Bienvenido a ALPHA, tu socio confiable en el mundo de los bienes raíces en
-                México. Desde nuestros modestos comienzos, nos hemos dedicado a brindar servicios excepcionales y
-                soluciones integrales para satisfacer las necesidades de nuestros clientes.</p>
+            <h4 class="title">About Us</h4>
         </div>
     </section>
 
 
 
-    <section class="py-5 ">
+    <section class="container bg-light secction-1">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 img-section1-nosotros">
-                </div>
+                <div class="col-md-6 img-section1-nosotros"> </div>
                 <div class="col-md-6">
-                    <h2 class="">¿Quiénes somos?</h2>
-                    <p class="">El origen de RE/MAX se remonta a 1973 cuando Dave Liniger, un agente inmobiliario con
-                        mucha experiencia pero desilusionado con el funcionamiento del sector, decidió crear una forma
-                        de trabajo alternativa que le permitiera ejercer su profesión con plena autonomía. Como otros
-                        muchos buenos agentes se sentía frustrado por la limitación de sus ingresos y el escaso
-                        desarrollo profesional que ofrecía el sector en ese momento. Así, se creó RE/MAX: una compañía
-                        que promueve una novedosa forma de trabajo que se ha convertido en la profesión ideal para miles
-                        de personas tenaces y ambiciosas en todo el mundo.</p>
-                    <p class="">El sistema creado por Dave Liniger está diseñado para atraer y retener a los mejores
-                        vendedores del mercado, ofreciéndoles un ambiente profesional enriquecedor en el que pueden
-                        trabajar con plena satisfacción. Este sistema tiene un aspecto especialmente revelador: los
-                        ingresos de cada profesional son un fiel reflejo de los resultados conseguidos con su trabajo.
-                        El nombre que recibió este sistema fue RE/MAX (una contracción de Real Estate y Máximos), que
-                        refleja claramente el objetivo que persiguen todas las personas que forman parte de la compañía:
-                        aportar el mejor servicio a cambio de obtener la máxima recompensa.
+                    <h2 class="title-section-1 ">Who Are Us?</h2>
+                    <p class="p-section-1 ">The origin of RE/MAX dates back to 1973 when Dave Liniger, a highly
+                        experienced real
+                        estate agent who was disillusioned with how the industry worked, decided to create an
+                        alternative way of working that would allow him to practice his profession with full
+                        autonomy.
+                        Like many other good agents, he was frustrated by the limited income and the lack of
+                        professional development offered by the industry at the time. Thus, RE/MAX was created: a
+                        company that promotes a new way of working
+                        The system created by Dave Liniger is designed to attract and retain the best
+                        salespeople in the market, offering them an enriching professional environment in which they
+                        can
+                        work with full satisfaction. This system has a particularly revealing aspect: the income of
+                        each
+                        professional is a true reflection of the results achieved with their work. The name given to
+                        this system was R
                     </p>
-                    <p class="">
-                        El sistema tuvo una gran aceptación entre Agentes y clientes consiguiendo abrir seis oficinas en
-                        los primeros seis meses de desarrollo. Desde entonces, RE/MAX ha crecido hasta llegar a ser la
-                        compañía inmobiliaria más exitosa del mundo. En la actualidad, RE/MAX cuenta con más de 140,000
-                        Asociados que trabajan en más de 9,000 oficinas situadas en más de 110 países. Desde el
-                        nacimiento de RE/MAX , hace más de 45 años, no ha habido un sólo mes en el que la organización
-                        haya dejado de crecer.
-                    </p>
+                    <button class="button-37 boton-section-1">Learn More</button>
                 </div>
+
             </div>
         </div>
-    </section>
 
-    <section class="section-info ">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h2 class="">¿Quiénes somos?</h2>
-                    <p class="">En ALPHA, nos enorgullecemos de nuestra larga historia de éxito y nuestro
-                        compromiso
-                        inquebrantable con la excelencia en el servicio al cliente. Nuestro equipo está formado por
-                        expertos
-                        apasionados y experimentados en el campo de los bienes raíces, dedicados a proporcionar
-                        resultados
-                        excepcionales y superar las expectativas de nuestros clientes en cada transacción.</p>
-                    <p class="">Nos especializamos en una amplia gama de servicios,
-                        que incluyen
-                        la compra, venta y alquiler
-                        de
-                        propiedades residenciales, comerciales e industriales en todo México. Ya sea que estés buscando
-                        comprar
-                        tu primera casa, invertir en propiedades comerciales o encontrar la ubicación perfecta para tu
-                        negocio,
-                        nuestro equipo está aquí para guiarte en cada paso del camino.
-                    </p>
-                </div>
-                <div class="col-md-6 img-section2-nosotros " style="height: 500px;">
 
-                </div>
+
+        <div class="row" style="margin-top: 80px;">
+            <div class="col-md-6">
+                <h2 class="title2-section-1 ">Who Are Us?</h2>
+                <p class="p2-section-1 ">The origin of RE/MAX dates back to 1973 when Dave Liniger, a highly
+                    experienced real
+                    estate agent who was disillusioned with how the industry worked, decided to create an
+                    alternative way of working that would allow him to practice his profession with full
+                    autonomy.
+                    Like many other good agents, he was frustrated by the limited income and the lack of
+                    professional development offered by the industry at the time. Thus, RE/MAX was created: a
+                    company that promotes a new way of working
+                    The system created by Dave Liniger is designed to attract and retain the best
+                    salespeople in the market, offering them an enriching professional environment in which they
+                    can
+                    work with full satisfaction. This system has a particularly revealing aspect: the income of
+                    each
+                    professional is a true reflection of the results achieved with their work. The name given to
+                    this system was R
+                </p>
+                <button class="button-37 boton2-section-1">Learn More</button>
+            </div>
+            <div class="col-md-6 img2-section1-nosotros"> </div>
+        </div>
+
+
+
+        <div class="row" style="margin-top: 80px;">
+            <div class="col-md-6 img3-section1-nosotros"> </div>
+            <div class="col-md-6">
+                <h2 class="title-section-1 ">Who Are Us?</h2>
+                <p class="p-section-1 ">The origin of RE/MAX dates back to 1973 when Dave Liniger, a highly
+                    experienced real
+                    estate agent who was disillusioned with how the industry worked, decided to create an
+                    alternative way of working that would allow him to practice his profession with full
+                    autonomy.
+                    Like many other good agents, he was frustrated by the limited income and the lack of
+                    professional development offered by the industry at the time. Thus, RE/MAX was created: a
+                    company that promotes a new way of working
+                    The system created by Dave Liniger is designed to attract and retain the best
+                    salespeople in the market, offering them an enriching professional environment in which they
+                    can
+                    work with full satisfaction. This system has a particularly revealing aspect: the income of
+                    each
+                    professional is a true reflection of the results achieved with their work. The name given to
+                    this system was R
+                </p>
+                <button class="button-37 boton-section-1">Learn More</button>
             </div>
         </div>
     </section>
 
     <section>
-        <div class="fondo-banner">
+        <div class="fondo-banner container">
             <div class="col">
                 <div class="col-banner">
-                    <h4> <strong>35,000+</strong></h4>
-                    <p>usuarios registrados</p>
+                    <h4 class="sub-banner">35,000+</h4>
+                    <p class="text-banner">Registered Users</p>
                 </div>
             </div>
             <div class="col">
                 <div class="col-banner">
-                    <h4><strong>400,000,000+</strong></h4>
-                    <p>pesos financiados</p>
+                    <h4 class="sub-banner">400,000,000+</h4>
+                    <p class="text-banner">Funded Dolars </p>
                 </div>
             </div>
             <div class="col">
                 <div class="col-banner">
-                    <h4><strong>80+</strong></h4>
-                    <p>ofertas fondeadas</p>
+                    <h4 class="sub-banner">80+</h4>
+                    <p class="text-banner">Funded Offers</p>
                 </div>
             </div>
             <div class="col">
                 <div class="col-banner">
-                    <h4><strong>172,000,000+</strong></h4>
-                    <p>de peosos entragados a nuestros inversionistas </p>
+                    <h4 class="sub-banner">172,000,000+</h4>
+                    <p class="text-banner">Of Dolars Delivered To Our Investors </p>
                 </div>
             </div>
 
@@ -149,35 +162,35 @@
 
     <section class="team py-5 bg-light">
         <div class="container">
-            <h2 class="text-center mb-4">Nuestro equipo</h2>
+            <h2 class="text-center mb-4 title2-section-1">Our Team</h2>
             <div class="row">
                 <div class="col-md-4 mb-4">
-                    <div class="card card-nosotros">
+                    <div class="card-nosotros">
                         <img src="https://th.bing.com/th/id/R.a50d93ad868b59f5600d88bcebfebed0?rik=DQmQgZcwU7RNBQ&pid=ImgRaw&r=0"
-                            class="card-img-top" alt="Miembro del equipo">
+                            class="card-img-top" alt="Miembro del equipo" style="border-radius: 20px;">
                         <div class="card-body text-center">
                             <h3 class="card-title">Ola Källenius</h3>
-                            <p class="card-text">Agente inmobiliario</p>
+                            <button class="btn-team button">Agente inmobiliario</botton>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <div class="card card-nosotros">
+                    <div class="card-nosotros">
                         <img src="https://th.bing.com/th/id/R.82f52642c53382904e2484d273582857?rik=YCkfPHj00Nj8vw&pid=ImgRaw&r=0"
-                            class="card-img-top" alt="Miembro del equipo">
+                            class="card-img-top" alt="Miembro del equipo" style="border-radius: 20px;">
                         <div class="card-body text-center">
                             <h3 class="card-title">Sundar Pichai</h3>
-                            <p class="card-text">Agente inmobiliario</p>
+                            <button class="btn-team button">Agente inmobiliario</botton>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <div class="card card-nosotros">
+                    <div class="card-nosotros">
                         <img src="https://th.bing.com/th/id/R.de576a30d4d8b4013cf611fc69568b83?rik=NbYWJ0SZBaXMlw&pid=ImgRaw&r=0"
-                            class="card-img-top" alt="Miembro del equipo">
+                            class="card-img-top" alt="Miembro del equipo" style="border-radius: 20px;">
                         <div class="card-body text-center">
                             <h3 class="card-title">Daniel Ek</h3>
-                            <p class="card-text">Agente inmobiliario</p>
+                            <button class="btn-team button">Agente inmobiliario</botton>
                         </div>
                     </div>
                 </div>

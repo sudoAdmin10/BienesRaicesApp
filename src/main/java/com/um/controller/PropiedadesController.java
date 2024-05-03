@@ -1,24 +1,17 @@
 package com.um.controller;
 
-import java.util.Collection;
-
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.catalina.manager.util.SessionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.context.SecurityContextHolder;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.um.dao.PropiedadDao;
 import com.um.model.Propiedad;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class PropiedadesController {
@@ -97,6 +90,8 @@ public class PropiedadesController {
                         + " " + propiedad.getPropietario() + " ");
 
         boolean result = propiedadDao.editarPropiedad(propiedad);
+        modelAndView.addObject("result", result);
+        System.out.println("RESULT " + result);
 
         modelAndView = new ModelAndView("redirect:/propiedades/detalles?id=" + propiedad.getId() + "&editar=" + result);
         return modelAndView;

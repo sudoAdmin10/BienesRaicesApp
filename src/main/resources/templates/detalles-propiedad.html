@@ -26,43 +26,66 @@
 
 <body>
 
-    <header class="header-navbar">
+    <header class="header-navbar container">
         <a href="/inicio"> <img class="logo-navbar" src="../img/xing.svg" alt="logo" href="/inicio"></a>
         <nav class="nav-links">
-            <a href="/inicio"><button class="button-37" type="button">Inicio</button></a>
-            <a th:href="@{/usuarios}"><button class="button-37" type="button">Usuarios</button></a>
-            <a href="/nosotros"><button class="button-37" type="button">Nosotros</button></a>
-            <a href="/propiedades"><button class="button-37" type="button">Propiedades</button></a>
+            <a href="/inicio"><button class="button-37" type="button">Home</button></a>
+            <a th:href="@{/usuarios}"><button class="button-37" type="button">Users</button></a>
+            <a href="/nosotros"><button class="button-37" type="button">About Us</button></a>
+            <a href="/propiedades"><button class="button-37" type="button">Properties</button></a>
         </nav>
-        <a class="fp" href="/registrar"><button class="button-37" type="button">Registrate</button></a>
+        <a class="fp" href="/registrar"><button class="button-37" type="button">Sign In</button></a>
         <!-- <a class="btn btn-outline-light" th:href="@{/logout}" data-bs-toggle="tooltip" data-bs-placement="bottom"
             title="Cerrar sesión"><i class="fa-solid fa-arrow-right-from-bracket"></i></a> -->
     </header>
 
-    <section class="container bg-light" style="margin-top: 30px;">
+    <div th:if="${result}" class="alert alert-success">
+        <strong>Success!</strong> Indicates a successful or positive action.
+    </div>
+
+    <div th:if="${result}" class="alert alert-danger">
+        <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
+    </div>
+    <section style="margin: 30px;">
         <div class="row " th:each="p : ${detalles}">
-            <div class="col-md-6">
+            <div class="col-md-7">
                 <div class="card-img">
-                    <img th:src="@{'/images/'} + ${p.imagen}" class="card-img-top" alt="Imagen Propiedad">
+                    <img th:src="@{'/images/'} + ${p.imagen}" class="img1" alt="Imagen Propiedad">
+                    <div class="imgs">
+                        <img th:src="@{'/images2/'} + 'i.jpg'" class="img2 col" alt="Imagen Propiedad">
+                        <img th:src="@{'/images3/'} + 'p.jpg'" class="img3 " alt="Imagen Propiedad">
+                    </div>
+
+
                 </div>
             </div>
-            <div class="col-md-6 ">
+            <div class="col-md-5  bg-light container " style="border-radius: 20px;">
                 <div class="title-detalle">
-                    <h5 th:if="${mapaTipoInmueble} !=0 and ${mapaEstadoInmueble} !=0"
+                    <h5 class="title-propertie" th:if="${mapaTipoInmueble} !=0 and ${mapaEstadoInmueble} !=0"
                         th:text="${mapaTipoInmueble[__${p.tipo}__].tipo_inmueble} + ' en ' + ${mapaEstadoInmueble[__${p.estado_Propiedad}__].estado}  ">
                     </h5>
-                    <p th:text="${p.direccion}"></p>
+                    <p class="text-propertie" th:text="${p.descripcion}"></p>
+                </div>
+                <p class="price" th:text="'$' + ${p.precio}"></p>
+
+                <div class="icons-properties">
+                    <div class="circle">
+                        <i class="fa-solid fa-toilet fa-1x" style="color: #ffffff;"></i>
+                    </div>
+                    <p class="p-properties" th:text="${p.num_wc}"></p>
+
+                    <div class="circle">
+                        <i class="fa-solid fa-bed fa-1x" style="color: #ffffff;"></i>
+                    </div>
+                    <p class="p-properties" th:text="${p.num_habitaciones}"></p>
+
+                    <div class="circle">
+                        <i class="fa-solid fa-car-side fa-1x" style="color: #ffffff;"></i>
+                    </div>
+                    <p class="p-properties" th:text="${p.num_wc}"></p>
                 </div>
 
-                <div class="title-detalle ">
-                    <h5>Precio: </h5>
-                </div>
-                <p class="card-text" th:text="'$' + ${p.precio}"></p>
-
-                <div class="title-detalle">
-                    <h5>Descripcion: </h5>
-                </div>
-                <p class="card-text" th:text="${p.descripcion}"></p>
+                <p class="text-propertie" th:text="${p.direccion}"></p>
 
                 <div class="">
                     <a th:href="@{/propiedades/detalles?id={id}(id=${p.id})}" class="btn " data-toggle="tooltip"
@@ -72,15 +95,17 @@
                         data-placement="top" title="Borrar"><i class="fa-solid fa-trash"
                             style="color: #8c7569;"></i></a>
                 </div>
-
+                <a href="/propiedades"> <button class="button-37 btn-return-properties"> Return</button>
+                </a>
             </div>
+
     </section>
 
 
 
     <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
-            <div class="modal-content">
+            <div class="modal-content container">
                 <div class="modal-header">
                     <h1 class="title" id="exampleModalLabel">Editar Propiedad <span th:text="${detalles.id}"></span>
                     </h1>

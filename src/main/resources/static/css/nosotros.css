@@ -1,19 +1,6 @@
-section {
-    font-family: "Raleway", sans-serif;
-    font-optical-sizing: auto;
-    color: #8c7569;
-    text-align: center;
-}
-
-h1,
-h2,
-h3 {
-    color: #683c23;
-}
-
 .card-nosotros {
     cursor: pointer;
-
+    border-radius: 20px;
     outline: none;
     outline: 0;
     transform: translateY(0);
@@ -21,13 +8,19 @@ h3 {
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+    border: 1px solid #c2ada2;
 }
 
 .card-nosotros:hover {
     box-shadow: #683c23 0 3px 9px 0;
     transform: translateY(-10px);
+    border-radius: 20px;
 }
 
+.card-title {
+
+    margin: 20px;
+}
 
 .fondo-banner {
     display: flex;
@@ -36,7 +29,7 @@ h3 {
     height: 300px;
     margin-bottom: 20px;
     background-color: #f6f3f0;
-
+    border-radius: 20px;
 }
 
 .icon-banner {
@@ -47,7 +40,8 @@ h3 {
 }
 
 .col-banner {
-    text-align: left;
+    font-family: "Raleway", sans-serif;
+    text-align: center;
     padding: 20px;
     margin: 10px;
     border-radius: 10px;
@@ -66,17 +60,10 @@ h3 {
     background-position: 0% 60%;
     background-size: cover;
     background-repeat: repeat;
-
+    height: 400px;
+    margin-top: -80px;
 }
 
-.img-section1-nosotros {
-    background-image: url('../img/img5.jpg');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.9;
-    background-repeat: no-repeat;
-    border-radius: 8px;
-}
 
 .img-section2-nosotros {
     background-image: url('../img/img8.jpg');
@@ -88,17 +75,137 @@ h3 {
 }
 
 .titulo-banner {
+    margin-top: 130px;
+}
+
+.title {
+    color: #ffffff;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    align-items: center;
     position: relative;
-    color: aliceblue;
+    text-align: center;
 
-    h4 {
-        color: #ffffff;
-        font-family: "Raleway", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 700;
-        font-style: normal;
-        font-size: 60px;
+}
 
-    }
+/* Section 1*/
+.secction-1 {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    border-radius: 20px;
+}
 
+.img-section1-nosotros {
+    background-image: url('../img/img5.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    height: auto;
+}
+
+.img2-section1-nosotros {
+    background-image: url('../img/img7.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    height: auto;
+}
+
+.img3-section1-nosotros {
+    background-image: url('../img/img10.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    height: auto;
+}
+
+.title-section-1 {
+    color: #000000;
+    font-family: "Raleway", sans-serif;
+    font-weight: 800;
+    font-size: 40px;
+    margin: 20px;
+    text-align: start;
+}
+
+.p-section-1 {
+    color: black;
+    font-weight: 500;
+    font-family: "Raleway", sans-serif;
+    text-align: start;
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.boton-section-1 {
+    display: flex;
+    text-align: start;
+    align-items: start;
+    margin-left: 20px;
+}
+
+.title2-section-1 {
+    color: #000000;
+    font-family: "Raleway", sans-serif;
+    font-weight: 800;
+    font-size: 40px;
+    margin: 20px;
+    text-align: end;
+}
+
+.p2-section-1 {
+    color: black;
+    font-weight: 500;
+    font-family: "Raleway", sans-serif;
+    text-align: end;
+    margin-right: 20px;
+    margin-top: 15px;
+}
+
+.boton2-section-1 {
+    display: flex;
+    text-align: end;
+    text-align: end;
+    align-items: end;
+    margin-left: 400px;
+}
+
+/* Banner */
+
+.text-banner {
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.sub-banner {
+    font-weight: 800;
+    font-size: 30px;
+}
+
+.btn-team {
+    margin-top: 10px;
+    background-color: #ffffff;
+    border: 1px solid #8c7569;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #8c7569;
+    font-size: 16px;
+    font-weight: 400;
+    outline: none;
+    outline: 0;
+    text-align: center;
+    box-shadow: #683c23 0 3px 3px 0;
+    margin-bottom: 20px;
+}
+
+.btn-team:hover {
+    border: 1px solid #8c7569;
+    background-color: #ffffff;
+    color: #8c7569;
+    margin-bottom: 20px;
 }

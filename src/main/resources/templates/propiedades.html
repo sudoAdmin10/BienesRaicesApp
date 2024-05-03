@@ -70,7 +70,7 @@
                     <img th:src="@{'/images/'} + ${p.imagen}" class="card-img-top" alt="Imagen Propiedad" width="100"
                         height="300">
                     <div class="card-body">
-                        <h5 class="card-title" th:text=" 'Precio: $' + ${p.precio}"></h5>
+                        <h5 class="card-title" th:text=" '$' + ${p.precio}"></h5>
                     </div>
                     <div class="card-info-container">
                         <div class="icon-text-container">
