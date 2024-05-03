@@ -107,7 +107,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content container">
                 <div class="modal-header">
-                    <h1 class="title" id="exampleModalLabel">Editar Propiedad <span th:text="${detalles.id}"></span>
+                    <h1 class="title" id="exampleModalLabel">Edit Property <span th:text="${detalles.id}"></span>
                     </h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -116,19 +116,19 @@
                     <input name="id" type="hidden" th:field="*{id}">
                     <div class="input-block">
                         <div class="input-label">
-                            <label for="precio">Precio:</label>
+                            <label for="precio">Price:</label>
                             <input class="form-control" type="text" id="precio" name="precio" th:field="*{precio}"><br>
                         </div>
                     </div>
                     <div class="input-block">
-                        <label for="estado_Propiedad">Estado:</label>
+                        <label for="estado_Propiedad">State:</label>
                         <select name="estado_Propiedad" id="estado_Propiedad" th:field="*{estado_Propiedad}"
                             class="btn  dropdown-toggle form-control">
-                            <option value="1">Venta</option>
-                            <option value="2">Renta</option>
+                            <option value="1">Sale</option>
+                            <option value="2">Rent</option>
                         </select>
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <label for="recipient-name" class="col-form-label input-label">Propietario:</label>
+                            <label for="recipient-name" class="col-form-label input-label">Owner:</label>
                             <select name="propietario" id="propietario" class="btn  dropdown-toggle form-control">
                                 <option value="1">Alan </option>
                                 <option value="2">Daniel </option>

@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Propiedades</title>
+    <title>Properties</title>
 
     <link rel="stylesheet" type="text/css" th:href="@{css/bootstrap5.2/bootstrap.min.css}" />
     <link rel="stylesheet" type="text/css" th:href="@{css/fontawesome6.1.2/fontawesome.min.css}" />
     <link rel="stylesheet" type="text/css" th:href="@{css/fontawesome6.1.2/solid.css}" />
     <link rel="icon" type="image/x-icon" href="/img/xing.svg">
-    <link rel="stylesheet" th:href="@{css/mystyle.css}" />
     <link rel="stylesheet" th:href=" @{css/global.css}" />
     <link rel="stylesheet" th:href="@{css/propiedades.css}" />
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/c933420b11.js" crossorigin="anonymous"></script>
@@ -33,37 +33,38 @@
 
 <body>
 
-    <header class="header-navbar">
+    <header class="header-navbar container">
         <a href="/inicio"> <img class="logo-navbar" src="../img/xing.svg" alt="logo" href="/inicio"></a>
         <nav class="nav-links">
-            <a href="/inicio"><button class="button-37" type="button">Inicio</button></a>
-            <a th:href="@{/usuarios}"><button class="button-37" type="button">Usuarios</button></a>
-            <a href="/nosotros"><button class="button-37" type="button">Nosotros</button></a>
-            <a href="/propiedades"><button class="button-37" type="button">Propiedades</button></a>
+            <a href="/inicio"><button class="button-37" type="button">Home</button></a>
+            <a th:href="@{/usuarios}"><button class="button-37" type="button">Users</button></a>
+            <a href="/nosotros"><button class="button-37" type="button">About Us</button></a>
+            <a href="/propiedades"><button class="button-37" type="button">Properties</button></a>
         </nav>
-        <a class="fp" href="/registrar"><button class="button-37" type="button">Registrate</button></a>
+        <a class="fp" href="/registrar"><button class="button-37" type="button">Sign In</button></a>
         <!-- <a class="btn btn-outline-light" th:href="@{/logout}" data-bs-toggle="tooltip" data-bs-placement="bottom"
             title="Cerrar sesión"><i class="fa-solid fa-arrow-right-from-bracket"></i></a> -->
     </header>
 
-    <section class="banner text-center py-5 img-banner-nosotros" style="height: 300px;">
+    <section class=" text-center py-5 img-banner-propiedades ">
         <div class="titulo-banner">
-            <h4>Bienes Raíces XYZ</h4>
-            <p class="subtitulo-banner">Bienvenido a ALPHA, tu socio confiable en el mundo de los bienes raíces en
-                México. Desde nuestros modestos comienzos, nos hemos dedicado a brindar servicios excepcionales y
-                soluciones integrales para satisfacer las necesidades de nuestros clientes.</p>
+            <h4 style="margin-top: 130px;">Properties</h4>
         </div>
     </section>
 
-    <div>
-        <a href="/crear-propiedad"> <button class="button-37" type="button" title="Crear Propiedad">Crear
-                Nueva</button></a>
+    <div class="container" style="margin-top: 40px;">
+        <h2 class="title-propertie">All Properties For You</h2>
+        <p class="sub-section-1">Welcome to KAMAZ, your trusted partner in the world of real estate in
+            Mexico. From our modest beginnings, we have been dedicated to providing exceptional and
+            Comprehensive solutions to meet the needs of our customers.</p>
+
+        <a class="btn-crear" href="/crear-propiedad"> <button class="button-37" type="button" title="Crear Propiedad"
+                style="margin: 30px;">Create
+                New</button></a>
     </div>
 
-    <section class="container bg-light section-config">
-        <div class="container titulo">
-            <h2 class="text-center">Todas las propiedades</h2>
-        </div>
+    <section class="container bg-light section-properties">
+
         <div class="row row-cols-1 row-cols-md-4 g-4">
             <div class="col" th:each="p : ${lista_propiedades}">
                 <div class="card h-100">
@@ -85,9 +86,9 @@
                             <i class="fa-brands fa-codepen"></i>
                             <p class="card-text" th:text="${p.dimensiones} + ' m²'"></p>
                         </div>
-                        <a th:href="@{/propiedades/detalles?id={id}(id=${p.id})}" class=" button button1"
-                            style="margin-bottom: 15px;">Ver
-                            más</a>
+                        <a th:href="@{/propiedades/detalles?id={id}(id=${p.id})}" class="btn btn-more"
+                            style="margin-bottom: 15px;">See
+                            More</a>
                     </div>
                 </div>
             </div>
@@ -101,17 +102,17 @@
     <footer class="footter">
         <div class="footter-container">
             <div class="colum-icons ">
-                <h4 style="color: #683c23;">Siguenos</h4>
+                <h4 style="color: #683c23;">Follow Us</h4>
                 <div class="footter-icons d-flex justify-content-around">
                     <i class="fab fa-facebook" style="color: #683c23;"></i>
                     <i class="fab fa-twitter" style="color: #683c23;"></i>
                     <i class="fab fa-instagram" style="color: #683c23;"></i>
                     <i class="fa-brands fa-x-twitter " style="color: #683c23;"></i>
                 </div>
-                <p class="mb-4 f-light">&copy; 2024 Bienes Raíces KAMAZ. Todos los derechos reservados.</p>
+                <p class="mb-4 f-light">&copy;2024 KAMAZ Real Estate. All rights reserved.</p>
             </div>
             <div class="colum-info">
-                <h4 class="fw-bold" style="color: #683c23;">Conocenos en</h4>
+                <h4 class="fw-bold" style="color: #683c23;">Meet Us</h4>
                 <p class="mb-1 f-light"><span class="fw-bold f-regular" style="color: #683c23;">CDMX:</span> WeWork,
                     Miguel de Cervantes
                     Saavedra 169, Granada, 11520, Miguel Hidalgo.</p>

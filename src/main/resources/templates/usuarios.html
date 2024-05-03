@@ -23,25 +23,22 @@
 
 <body>
 
-	<header class="header-navbar">
+	<header class="header-navbar container">
 		<a href="/inicio"> <img class="logo-navbar" src="../img/xing.svg" alt="logo" href="/inicio"></a>
 		<nav class="nav-links">
-			<a href="/inicio"><button class="button-37" type="button">Inicio</button></a>
-			<a th:href="@{/usuarios}"><button class="button-37" type="button">Usuarios</button></a>
-			<a href="/nosotros"><button class="button-37" type="button">Nosotros</button></a>
-			<a href="/propiedades"><button class="button-37" type="button">Propiedades</button></a>
+			<a href="/inicio"><button class="button-37" type="button">Home</button></a>
+			<a th:href="@{/usuarios}"><button class="button-37" type="button">Users</button></a>
+			<a href="/nosotros"><button class="button-37" type="button">About Us</button></a>
+			<a href="/propiedades"><button class="button-37" type="button">Properties</button></a>
 		</nav>
-		<a class="fp" href="/registrar"><button class="button-37" type="button">Registrate</button></a>
+		<a class="fp" href="/registrar"><button class="button-37" type="button">Sign In</button></a>
 		<!-- <a class="btn btn-outline-light" th:href="@{/logout}" data-bs-toggle="tooltip" data-bs-placement="bottom"
             title="Cerrar sesión"><i class="fa-solid fa-arrow-right-from-bracket"></i></a> -->
 	</header>
 
-	<section class="banner text-center py-5 img-banner-nosotros" style="height: 300px;">
+	<section class="text-center py-5 img-banner-users">
 		<div class="titulo-banner">
-			<h4>Bienes Raíces XYZ</h4>
-			<p class="subtitulo-banner">Bienvenido a ALPHA, tu socio confiable en el mundo de los bienes raíces en
-				México. Desde nuestros modestos comienzos, nos hemos dedicado a brindar servicios excepcionales y
-				soluciones integrales para satisfacer las necesidades de nuestros clientes.</p>
+			<h4 style="margin-top: 130px;"> Users</h4>
 		</div>
 	</section>
 
@@ -53,10 +50,10 @@
 			<thead>
 				<tr>
 					<th class="col-md-1">N°</th>
-					<th class="col-md-2">Nombre</th>
-					<th class="col-md-2">Activo</th>
-					<th class="col-md-2">Agencia</th>
-					<th class="col-md-2">Acciones</th>
+					<th class="col-md-2">Name</th>
+					<th class="col-md-2">Active</th>
+					<th class="col-md-2">Agence</th>
+					<th class="col-md-2">Actiions</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -82,14 +79,14 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h1 class="title" id="exampleModalLabel">Editar Usuario</h1>
+					<h1 class="title" id="exampleModalLabel">Edit User</h1>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<form th:action="@{/editarUsuario}" method="post" th:object="${tmp}">
 					<input name="id" type="hidden" th:field="*{id}">
 					<div class="modal-body">
 						<div class="mb-3">
-							<label for="recipient-name" class="col-form-label input-label">Nombre:</label>
+							<label for="recipient-name" class="col-form-label input-label">Name:</label>
 							<input name="nombre" type="text" class="form-control" th:field="*{nombre}">
 						</div>
 						<div class="mb-3">
@@ -114,7 +111,7 @@
 						</div>
 					</div>
 					<div class="modal-footer">
-						<button th:action="@{/editarUsuario}" type="submit" class="button-37">Grabar</button>
+						<button th:action="@{/editarUsuario}" type="submit" class="button-37">Save</button>
 					</div>
 				</form>
 			</div>
@@ -133,10 +130,10 @@
 					<i class="fab fa-instagram" style="color: #683c23;"></i>
 					<i class="fa-brands fa-x-twitter " style="color: #683c23;"></i>
 				</div>
-				<p class="mb-4 f-light">&copy; 2024 Bienes Raíces KAMAZ. Todos los derechos reservados.</p>
+				<p class="mb-4 f-light">&copy; 2024 KAMAZ Real Estate. All rights reserved.</p>
 			</div>
 			<div class="colum-info">
-				<h4 class="fw-bold" style="color: #683c23;">Conocenos en</h4>
+				<h4 class="fw-bold" style="color: #683c23;">Meet Us</h4>
 				<p class="mb-1 f-light"><span class="fw-bold f-regular" style="color: #683c23;">CDMX:</span> WeWork,
 					Miguel de Cervantes
 					Saavedra 169, Granada, 11520, Miguel Hidalgo.</p>

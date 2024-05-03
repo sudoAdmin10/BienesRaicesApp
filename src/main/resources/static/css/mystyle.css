@@ -23,7 +23,7 @@ body {
   background-position: 0% 40%;
   background-attachment: fixed;
   border-radius: 20px;
-  margin-top: -78px;
+  margin-top: -80px;
   background-size: cover;
 }
 
@@ -269,20 +269,30 @@ p {
 .card-section-3 {
   border-radius: 20px;
   align-items: center;
-  height: 280px;
+  height: 290px;
+  padding: 10px;
 }
 
 .img-section-3 {
   height: 12rem;
   width: 12rem;
   border-radius: 20px;
-  margin: 10px 0px -10px -15px;
+  margin: 10px 0px -10px -10px;
+  align-items: center;
+  text-align: center;
+
 }
 
 .text-section-3 {
-  align-items: center;
-  text-align: center;
+  align-items: left;
+  text-align: left;
   margin-top: 25px;
+  text-align: left;
+}
+
+.price-section-3 {
+  align-items: left;
+  text-align: left;
   text-align: left;
 }
 

@@ -8,6 +8,16 @@
     min-width: 400px;
 }
 
+.img-banner-users {
+    background-image: url('../img/fondoInicio.jpg');
+    background-position: 0% 60%;
+    background-size: cover;
+    background-repeat: repeat;
+    height: 400px;
+    margin-top: -80px;
+    border-radius: 20px;
+}
+
 .content-table thead tr {
     background-color: #55311c;
     color: aliceblue;

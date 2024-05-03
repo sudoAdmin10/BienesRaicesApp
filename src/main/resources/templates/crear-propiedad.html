@@ -9,7 +9,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
     <meta http-equiv="Pragma" content="no-cache">
 
-    <title>Crear Propiedad</title>
+    <title>Create Property</title>
 
     <link rel="icon" type="image/x-icon" href="/img/xing.svg">
     <link rel="stylesheet" th:href="@{css/crea-propiedad.css}" />
@@ -34,7 +34,7 @@
         <div class="model">
             <div class="model-container">
                 <div class="row">
-                    <h2 class="form-propiedades-title">Crear Nueva Propiedad</h2>
+                    <h2 class="form-propiedades-title">Add New Property</h2>
 
                 </div>
                 <div class="row row-cols-1 row-cols-md-4 g-4">
@@ -43,19 +43,19 @@
 
                         <div class="input-block">
                             <div class="input-label">
-                                <label for="precio">Precio:</label>
+                                <label for="precio">Price:</label>
                                 <input class="form-control" type="text" id="precio" name="precio" required><br>
                             </div>
                         </div>
 
                         <div class="input-block">
-                            <label for="estadoPropiedad">Estado:</label>
+                            <label for="estadoPropiedad">State:</label>
                             <input class="form-control" type="hidden" th:field="*{estado_Propiedad}"
                                 id="estadoPropiedad" />
                             <div class="btn-group" role="group" aria-label="Basic example">
                                 <select class="form-control ">
-                                    <option value="1">Venta</option>
-                                    <option value="2">Renta</option>
+                                    <option value="1">Sale</option>
+                                    <option value="2">Rent</option>
                                 </select>
                             </div>
                         </div>
@@ -75,7 +75,7 @@
 
                         <div class="input-block">
                             <div class="input-label">
-                                <label for="direccion">Dirección:</label>
+                                <label for="direccion">Direction:</label>
                                 <input class="form-control" type="text" th:field="*{direccion}"
                                     placeholder="Direccion de la propiedad" name="direccion" required>
                             </div>
@@ -85,7 +85,7 @@
 
                         <div class="input-block">
                             <div class="input-label">
-                                <label for="dimensiones">Dimensiones (m²):</label>
+                                <label for="dimensiones">Dimension (m²):</label>
                                 <input class="form-control" type="text" th:field="*{dimensiones}"
                                     placeholder="Dimension en metros cuadrados" name="dimensiones" required>
                             </div>
@@ -94,14 +94,14 @@
 
                         <div class="input-block">
                             <div class="input-label">
-                                <label for="num_wc">Número de Baños:</label>
+                                <label for="num_wc">Number of Bathrooms:</label>
                                 <input class="form-control" type="text" name="num_wc" th:field="*{num_wc}" required>
                             </div>
                         </div>
 
                         <div class="input-block">
                             <div class="input-label">
-                                <label for="num_habitaciones">Número de Habitaciones:</label>
+                                <label for="num_habitaciones">Number of Bedrooms:</label>
                                 <input class="form-control" type="text" name="num_habitaciones"
                                     th:field="*{num_habitaciones}" required>
                             </div>
@@ -109,28 +109,28 @@
 
                         <div class="input-block">
                             <div class="input-label">
-                                <label for="imagen">Agregue una imagen</label>
+                                <label for="imagen">Add image</label>
                                 <input class="form-control" type="file" name="imagen" th:field="*{imagen}" required><br>
                             </div>
                         </div>
 
                         <div class="input-block">
                             <div class="input-label">
-                                <label for="descripcion">Descripcion adicional de la propiedad</label>
+                                <label for="descripcion">Aditional descriptionof the propertiE</label>
                                 <textarea th:field="*{descripcion}" name="descripcion" rows="4" cols="50"
                                     required></textarea>
                             </div>
                         </div>
 
                         <div style="text-align: center;">
-                            <button class="input-button button-37 " type="submit">Crear</button>
+                            <button class="input-button button-37 " type="submit">Create</button>
                         </div>
 
                     </form>
 
                     <div style="text-align: right;">
                         <a href="/propiedades"><button class="input-button button-37 " type="submit"
-                                style="align-items: end;">Cancelar</button></a>
+                                style="align-items: end;">Cancel</button></a>
                     </div>
 
                 </div>

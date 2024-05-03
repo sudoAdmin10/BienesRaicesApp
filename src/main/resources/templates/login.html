@@ -28,28 +28,28 @@
 			<div class="model-left">
 				<form name="form" th:action="@{/login}" method="POST" class="form">
 					<div>
-						<h2 class="title">Iniciar sesión</h2>
-						<p class="desc">Ingresa con tu correo y Contraseña</p>
+						<h2 class="title">Sign In</h2>
+						<p class="desc">Log in with your email and password</p>
 					</div>
 					<div class="input-block">
 						<div class="input-label">
-							<label for="email" class="input-label" placeholder="Correo">Correo</label>
+							<label for="email" class="input-label" placeholder="Correo">Mail</label>
 							<input type="text" class="form-control" name="usuario" placeholder="Usuario"><br>
 						</div>
 					</div>
 					<div class="input-block">
 						<div class="">
-							<label for="email" class="input-label" placeholder="Password">Contraseña</label>
+							<label for="email" class="input-label" placeholder="Password">Password</label>
 							<input type="password" class="form-control" name="password" placeholder="Password">
 						</div>
 					</div>
 					<div class="fp">
-						<a href="" class="">Olvidaste tu contraseña?</a>
-						<button class="input-button" type="submit">Entrar</button>
+						<a href="" class="">Forgot your password?</a>
+						<button class="input-button" type="submit">Log In</button>
 					</div>
-					<p class="sign-up">Don't have an account? <a href="/registrar">Iniciar secion ahora</a></p>
+					<p class="sign-up">Don't have an account? <a href="/registrar">Sing In Now</a></p>
 					<div th:if="${param.error}">
-						<p style="font-size: 20; color: #FF1C19;">Usuario o Contraseña invalido</p>
+						<p style="font-size: 20; color: #FF1C19;">Userr o password invalid</p>
 					</div>
 				</form>
 			</div>
