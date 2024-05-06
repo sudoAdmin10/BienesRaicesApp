@@ -8,6 +8,7 @@ public class Propiedad {
     private String dimensiones;
     private String num_wc;
     private String num_habitaciones;
+    private String num_cars;
     private String direccion;
     private int estado_propiedad;
     private int propietario;
@@ -67,6 +68,14 @@ public class Propiedad {
 
     public void setNum_habitaciones(String num_habitaciones) {
         this.num_habitaciones = num_habitaciones;
+    }
+
+    public String getNum_cars() {
+        return num_cars;
+    }
+
+    public void setNum_cars(String num_cars) {
+        this.num_cars = num_cars;
     }
 
     public String getDireccion() {

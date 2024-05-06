@@ -101,6 +101,7 @@
 }
 
 .section-properties {
-    margin-top: 60px;
-    margin-bottom: 60px;
+    padding: 30px;
+    margin: 30px;
+    border-radius: 20px;
 }

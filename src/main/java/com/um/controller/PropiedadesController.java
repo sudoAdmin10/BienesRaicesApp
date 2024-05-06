@@ -1,5 +1,7 @@
 package com.um.controller;
 
+import java.util.Random;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,9 @@ public class PropiedadesController {
 
     @Autowired
     private PropiedadDao propiedadDao;
+
+    @Autowired
+    private Random random;
 
     @RequestMapping(value = { "/propiedades" }, method = RequestMethod.GET)
     public ModelAndView mostrarPropiedades(HttpServletRequest request) {
@@ -113,6 +118,11 @@ public class PropiedadesController {
             propiedad_detalles = propiedadDao.buscaPropiedadPorId(id);
         }
 
+        int min = 1;
+        int max = 10;
+        int randomNum = random.nextInt((max - min) + 1) + min;
+        System.out.println("NUMERO RANDOM " + randomNum);
+        modelAndView.addObject("randomNum", randomNum);
         atribute.addFlashAttribute("edit", "Property Edited Sucessfully!!");
         modelAndView.addObject("mapaTipoInmueble", propiedadDao.mapaTipoInmueble());
         modelAndView.addObject("mapaEstadoInmueble", propiedadDao.mapaEstadoInmueble());

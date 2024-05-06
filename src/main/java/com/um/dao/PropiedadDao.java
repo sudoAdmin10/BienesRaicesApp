@@ -84,11 +84,11 @@ public class PropiedadDao {
 
         Object[] parametros = new Object[] {
                 objeto.getPrecio(), tipos, objeto.getDescripcion(), objeto.getDimensiones(),
-                objeto.getNum_wc(), objeto.getNum_habitaciones(), objeto.getDireccion(),
+                objeto.getNum_wc(), objeto.getNum_habitaciones(), objeto.getNum_cars(), objeto.getDireccion(),
                 estados, grabaPropietario, objeto.getImagen()
         };
 
-        query = "INSERT INTO PROPIEDADES(PRECIO, TIPO, DESCRIPCION, DIMENSIONES ,NUM_WC, NUM_HABITACIONES, DIRECCION, ESTADO_PROPIEDAD, PROPIETARIO, IMAGEN) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        query = "INSERT INTO PROPIEDADES(PRECIO, TIPO, DESCRIPCION, DIMENSIONES ,NUM_WC, NUM_HABITACIONES, NUM_CARS, DIRECCION, ESTADO_PROPIEDAD, PROPIETARIO, IMAGEN) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         if (MySQLTemplate.update(query, parametros) >= 1) {
             query = "SELECT ID FROM PROPIEDADES WHERE PROPIETARIO = ?";
@@ -111,10 +111,10 @@ public class PropiedadDao {
 
         System.out.println("Entrado en Editar propiedadDao ");
 
-        String query = "UPDATE PROPIEDADES SET PRECIO = ?, TIPO = ?, DESCRIPCION = ?, DIMENSIONES = ?, NUM_WC = ?, NUM_HABITACIONES = ?, DIRECCION = ?, ESTADO_PROPIEDAD = ?, PROPIETARIO = ? WHERE ID = ?";
+        String query = "UPDATE PROPIEDADES SET PRECIO = ?, TIPO = ?, DESCRIPCION = ?, DIMENSIONES = ?, NUM_WC = ?, NUM_HABITACIONES = ?, NUM_CARS = ?, DIRECCION = ?, ESTADO_PROPIEDAD = ?, PROPIETARIO = ? WHERE ID = ?";
         int rowsUpdated = MySQLTemplate.update(query, objeto.getPrecio(), objeto.getTipo(),
                 objeto.getDescripcion(), objeto.getDimensiones(), objeto.getNum_wc(), objeto.getNum_habitaciones(),
-                objeto.getDireccion(), objeto.getEstado_Propiedad(), objeto.getPropietario(),
+                objeto.getNum_cars(), objeto.getDireccion(), objeto.getEstado_Propiedad(), objeto.getPropietario(),
                 objeto.getId());
         if (rowsUpdated >= 1) {
             ok = true;

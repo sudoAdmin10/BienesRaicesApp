@@ -20,6 +20,7 @@ public class PropiedadMapper implements RowMapper<Propiedad> {
         objeto.setDimensiones(rs.getString("DIMENSIONES"));
         objeto.setNum_wc(rs.getString("NUM_WC"));
         objeto.setNum_habitaciones(rs.getString("NUM_HABITACIONES"));
+        objeto.setNum_cars(rs.getString("NUM_CARS"));
         objeto.setDireccion(rs.getString("DIRECCION"));
         objeto.setEstado_Propiedad(rs.getInt("ESTADO_PROPIEDAD"));
         objeto.setPropietario(rs.getInt("PROPIETARIO"));

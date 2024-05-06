@@ -51,8 +51,8 @@
                 <div class="card-img">
                     <img th:src="@{'/images/'} + ${p.imagen}" class="img1" alt="Imagen Propiedad">
                     <div class="imgs">
-                        <img th:src="@{'/images2/'} + 'i.jpg'" class="img2 col" alt="Imagen Propiedad">
-                        <img th:src="@{'/images3/'} + 'p.jpg'" class="img3 " alt="Imagen Propiedad">
+                        <img th:src="@{'/images2/i'} + ${randomNum} + '.jpg'" class="img2 col" alt="Imagen Propiedad">
+                        <img th:src="@{'/images3/p'} + ${randomNum} + '.jpg'" class="img3 " alt="Imagen Propiedad">
                     </div>
 
 
@@ -81,7 +81,7 @@
                     <div class="circle">
                         <i class="fa-solid fa-car-side fa-1x" style="color: #ffffff;"></i>
                     </div>
-                    <p class="p-properties" th:text="${p.num_wc}"></p>
+                    <p class="p-properties" th:text="${p.num_cars}"></p>
                 </div>
 
                 <p class="text-propertie" th:text="${p.direccion}"></p>
@@ -137,13 +137,13 @@
                     </div>
 
                     <div class="input-block">
-                        <label for="tipo">Tipo:</label>
+                        <label for="tipo">Type:</label>
                         <select name="tipo" id="tipo" th:field="*{tipo}" class="btn  dropdown-toggle">
-                            <option value="1">Casa</option>
-                            <option value="2">Departamento</option>
-                            <option value="3">Terreno</option>
-                            <option value="4">Edificio</option>
-                            <option value="5">Oficina</option>
+                            <option value="1">House</option>
+                            <option value="2">Department</option>
+                            <option value="3">Land</option>
+                            <option value="4">Build</option>
+                            <option value="5">Oficine</option>
                             <option value="6">Local</option>
                         </select>
                         <br>
@@ -152,7 +152,7 @@
                     <div class="col">
                         <div class="input-block">
                             <div class="input-label">
-                                <label for="direccion">Dirección:</label>
+                                <label for="direccion">Direction:</label>
                                 <input class="form-control" type="text" th:field="*{direccion}"
                                     placeholder="Direccion de la propiedad" name="direccion">
                             </div>
@@ -163,7 +163,7 @@
 
                         <div class="input-block">
                             <div class="input-label">
-                                <label for="dimensiones">Dimensiones (m²):</label>
+                                <label for="dimensiones">Dimensions (m²):</label>
                                 <input class="form-control" type="text" th:field="*{dimensiones}"
                                     placeholder="Dimension en metros cuadrados" name="dimensiones">
                             </div>
@@ -172,15 +172,21 @@
 
                     <div class="input-block">
                         <div class="input-label">
-                            <label for="num_wc">Número de Baños:</label>
+                            <label for="num_wc">Number of Bathrooms:</label>
                             <input class="form-control" type="text" name="num_wc" th:field="*{num_wc}">
                         </div>
                     </div>
                     <div class="input-block">
                         <div class="input-label">
-                            <label for="num_habitaciones">Número de Habitaciones:</label>
+                            <label for="num_habitaciones">Number of Bedrooms:</label>
                             <input class="form-control" type="text" name="num_habitaciones"
                                 th:field="*{num_habitaciones}">
+                        </div>
+                    </div>
+                    <div class="input-block">
+                        <div class="input-label">
+                            <label for="num_cars">Number of Cars:</label>
+                            <input class="form-control" type="text" name="num_cars" th:field="*{num_cars}">
                         </div>
                     </div>
                     <div class="input-block">
@@ -192,7 +198,7 @@
 
                     <div class="boton-guardar">
                         <button th:action="@{/editarPropiedad}" class="input-button button-37 "
-                            type="submit">Editar</button>
+                            type="submit">Edit</button>
                     </div>
 
                 </form>

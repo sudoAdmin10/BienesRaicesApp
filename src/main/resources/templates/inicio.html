@@ -257,20 +257,20 @@
                             alt="Imagen Propiedad" width="100" height="400">
                         <div class="card-body">
                             <h5 class="card-title" th:text="'$'+${p.precio}"></h5>
-                            <p class="card-text" th:text="${p.descripcion}"></p>
+                            <p th:text="${p.descripcion}" style="color: black;"></p>
                         </div>
                         <div class="card-info-container">
                             <div class="icon-text-container">
                                 <i class="fa-solid fa-toilet"></i>
-                                <p class="card-text" th:text="${p.num_wc}"></p>
+                                <p th:text="${p.num_wc}"></p>
                             </div>
                             <div class="icon-text-container">
                                 <i class="fa-solid fa-bed"></i>
-                                <p class="card-text" th:text="${p.num_habitaciones}"></p>
+                                <p th:text="${p.num_habitaciones}"></p>
                             </div>
                             <div class="icon-text-container">
                                 <i class="fa-brands fa-codepen"></i>
-                                <p class="card-text" th:text="${p.dimensiones} + ' m²'"></p>
+                                <p th:text="${p.dimensiones} + ' m²'"></p>
                             </div>
                             <a th:href="@{/propiedades/detalles?id={id}(id=${p.id})}" class="button"
                                 style="margin-bottom: 15px;">See More</a>
