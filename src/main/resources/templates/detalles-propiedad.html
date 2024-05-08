@@ -91,7 +91,7 @@
                         data-bs-toggle="modal" data-bs-target="#exampleModal2" data-placement="top" title="Editar">
                         <i class="fa-solid fa-pen-to-square" style="color: #8c7569;"></i></a>
                     <a th:href="@{/borrarPropiedad?id={id}(id=${p.id})}" class="btn " data-toggle="tooltip"
-                        data-placement="top" title="Borrar"><i class="fa-solid fa-trash"
+                        data-placement="top" title="Borrar" onclick="myFunction()"><i class="fa-solid fa-trash"
                             style="color: #8c7569;"></i></a>
                 </div>
                 <a href="/propiedades"> <button class="button-37 btn-return-properties"> Return</button>
@@ -232,6 +232,12 @@
 
         function setTipo(tipo) {
             document.getElementById('tipo').value = tipo;
+        }
+    </script>
+
+    <script>
+        function myFunction() {
+            confirm("Press a button!");
         }
     </script>
 

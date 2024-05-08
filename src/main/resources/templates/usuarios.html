@@ -42,8 +42,9 @@
 		</div>
 	</section>
 
-	<div class="container">
 
+
+	<div class="container">
 		<!-- <a th:href="@{/regresar}" class="btn btn-primary btn-xs" data-toggle="tooltip" data-placement="top"
 			title="Nuevo">Regresar</a><br> -->
 		<table class="table content-table">
@@ -66,7 +67,8 @@
 						<a th:href="@{/usuarios?id={id}(id=${decla.id})}" class="btn " data-toggle="tooltip"
 							data-placement="top" title="Editar"><i class="fa-solid fa-pen-to-square"></i></a>
 						<a th:href="@{/borrar?id={id}(id=${decla.id})}" class="btn " data-toggle="tooltip"
-							data-placement="top" title="Borrar"><i class="fa-solid fa-trash"></i></a>
+							data-placement="top" title="Borrar" onclick="myFunction()"><i
+								class="fa-solid fa-trash"></i></a>
 					</td>
 				</tr>
 			</tbody>
@@ -170,6 +172,13 @@
 
 		function setTipo(agencia_id) {
 			document.getElementById('agencia_id').value = agencia_id;
+		}
+	</script>
+
+
+	<script>
+		function myFunction() {
+			confirm("Press a button!");
 		}
 	</script>
 

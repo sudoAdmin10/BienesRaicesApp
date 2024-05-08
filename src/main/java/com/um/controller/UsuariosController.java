@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.um.dao.UsuarioDao;
 import com.um.model.Usuario;
@@ -96,7 +97,7 @@ public class UsuariosController {
 	}
 
 	@RequestMapping(value = "/borrar", method = RequestMethod.GET)
-	public ModelAndView borrarUsuario(HttpServletRequest request) {
+	public ModelAndView borrarUsuario(HttpServletRequest request, RedirectAttributes atribute) {
 		ModelAndView modelAndView = new ModelAndView();
 		int id = request.getParameter("id") == null ? 0 : Integer.parseInt(request.getParameter("id"));
 
@@ -107,7 +108,7 @@ public class UsuariosController {
 			result = usuarioDao.borrarUsuarioPorId(id);
 		}
 
-		modelAndView = new ModelAndView("redirect:/usuarios?borrar=" + result);
+		modelAndView = new ModelAndView("redirect:/usuarios?borrar=" + result + "&ModalDelete=true");
 
 		return modelAndView;
 	}
